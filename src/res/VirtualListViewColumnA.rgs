@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwA.VirtualListViewColumn.1 = s 'TimoSoft VirtualListViewColumn Class 1.7 (ANSI)'
+	{
+		CLSID = s '{FD9D6BB6-D669-4990-8F8C-865E4EE75150}'
+	}
+	ExLVwA.VirtualListViewColumn = s 'TimoSoft VirtualListViewColumn Class (ANSI)'
+	{
+		CLSID = s '{FD9D6BB6-D669-4990-8F8C-865E4EE75150}'
+		CurVer = s 'ExLVwA.VirtualListViewColumn.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {FD9D6BB6-D669-4990-8F8C-865E4EE75150} = s 'TimoSoft VirtualListViewColumn Class (ANSI)'
+		{
+			ProgID = s 'ExLVwA.VirtualListViewColumn.1'
+			VersionIndependentProgID = s 'ExLVwA.VirtualListViewColumn'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2B7096FB-1E68-4e54-A2D9-4AA933EAC680}'
+		}
+	}
+}

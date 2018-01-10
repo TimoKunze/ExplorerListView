@@ -1,0 +1,391 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+#ifdef UNICODE
+  IDB_EXPLORERLISTVIEW    BITMAP                  "ExplorerListViewU.bmp"
+#else
+  IDB_EXPLORERLISTVIEW    BITMAP                  "ExplorerListViewA.bmp"
+#endif
+IDB_TOOLBARENABLED      BITMAP                  "ToolBar enabled.bmp"
+IDB_TOOLBARDISABLED     BITMAP                  "ToolBar disabled.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPG
+//
+
+IDB_ABOUT               JPG                      "About.jpg"
+IDB_PAYPAL              JPG                      "Paypal.jpg"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION VERSION_MAJOR,VERSION_MINOR,VERSION_REVISION1,VERSION_BUILD
+ PRODUCTVERSION VERSION_MAJOR,VERSION_MINOR,VERSION_REVISION1,VERSION_BUILD
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Designed for Visual Basic. This software is freeware!"
+#ifdef UNICODE
+            VALUE "FileDescription", "ExplorerListView ActiveX Control (Unicode)"
+#else
+            VALUE "FileDescription", "ExplorerListView ActiveX Control (ANSI)"
+#endif
+            VALUE "FileVersion", STRFILEVERSION
+#ifdef UNICODE
+            VALUE "InternalName", "ExLVwU.ocx"
+#else
+            VALUE "InternalName", "ExLVwA.ocx"
+#endif
+            VALUE "LegalCopyright", "Copyright (C) 2005-2018 Timo ""TimoSoft"" Kunze"
+#ifdef UNICODE
+            VALUE "OriginalFilename", "ExLVwU.ocx"
+#else
+            VALUE "OriginalFilename", "ExLVwA.ocx"
+#endif
+            VALUE "ProductName", "TimoSoft ExplorerListView"
+            VALUE "ProductVersion", STRPRODUCTVERSION
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+#ifdef UNICODE
+  IDR_EXLVW                    REGISTRY                "ExLVwU.rgs"
+  IDR_EXPLORERLISTVIEW         REGISTRY                "ExplorerListViewU.rgs"
+  IDR_LISTVIEWCOLUMN           REGISTRY                "ListViewColumnU.rgs"
+  IDR_LISTVIEWCOLUMNS          REGISTRY                "ListViewColumnsU.rgs"
+  IDR_VIRTUALLISTVIEWCOLUMN    REGISTRY                "VirtualListViewColumnU.rgs"
+  IDR_LISTVIEWITEM             REGISTRY                "ListViewItemU.rgs"
+  IDR_LISTVIEWITEMS            REGISTRY                "ListViewItemsU.rgs"
+  IDR_VIRTUALLISTVIEWITEM      REGISTRY                "VirtualListViewItemU.rgs"
+  IDR_LISTVIEWITEMCONTAINER    REGISTRY                "ListViewItemContainerU.rgs"
+  IDR_LISTVIEWSUBITEM          REGISTRY                "ListViewSubItemU.rgs"
+  IDR_LISTVIEWSUBITEMS         REGISTRY                "ListViewSubItemsU.rgs"
+  IDR_LISTVIEWGROUP            REGISTRY                "ListViewGroupU.rgs"
+  IDR_LISTVIEWGROUPS           REGISTRY                "ListViewGroupsU.rgs"
+  IDR_VIRTUALLISTVIEWGROUP     REGISTRY                "VirtualListViewGroupU.rgs"
+  IDR_LISTVIEWWORKAREA         REGISTRY                "ListViewWorkAreaU.rgs"
+  IDR_LISTVIEWWORKAREAS        REGISTRY                "ListViewWorkAreasU.rgs"
+  IDR_VIRTUALLISTVIEWWORKAREA  REGISTRY                "VirtualListViewWorkAreaU.rgs"
+  IDR_VIRTUALLISTVIEWWORKAREAS REGISTRY                "VirtualListViewWorkAreasU.rgs"
+  IDR_LISTVIEWFOOTERITEM       REGISTRY                "ListViewFooterItemU.rgs"
+  IDR_LISTVIEWFOOTERITEMS      REGISTRY                "ListViewFooterItemsU.rgs"
+  IDR_OLEDATAOBJECT            REGISTRY                "OLEDataObjectU.rgs"
+  IDR_COMMONPROPERTIES         REGISTRY                "CommonPropertiesU.rgs"
+  IDR_STRINGPROPERTIES         REGISTRY                "StringPropertiesU.rgs"
+#else
+  IDR_EXLVW                    REGISTRY                "ExLVwA.rgs"
+  IDR_EXPLORERLISTVIEW         REGISTRY                "ExplorerListViewA.rgs"
+  IDR_LISTVIEWCOLUMN           REGISTRY                "ListViewColumnA.rgs"
+  IDR_LISTVIEWCOLUMNS          REGISTRY                "ListViewColumnsA.rgs"
+  IDR_VIRTUALLISTVIEWCOLUMN    REGISTRY                "VirtualListViewColumnA.rgs"
+  IDR_LISTVIEWITEM             REGISTRY                "ListViewItemA.rgs"
+  IDR_LISTVIEWITEMS            REGISTRY                "ListViewItemsA.rgs"
+  IDR_VIRTUALLISTVIEWITEM      REGISTRY                "VirtualListViewItemA.rgs"
+  IDR_LISTVIEWITEMCONTAINER    REGISTRY                "ListViewItemContainerA.rgs"
+  IDR_LISTVIEWSUBITEM          REGISTRY                "ListViewSubItemA.rgs"
+  IDR_LISTVIEWSUBITEMS         REGISTRY                "ListViewSubItemsA.rgs"
+  IDR_LISTVIEWGROUP            REGISTRY                "ListViewGroupA.rgs"
+  IDR_LISTVIEWGROUPS           REGISTRY                "ListViewGroupsA.rgs"
+  IDR_VIRTUALLISTVIEWGROUP     REGISTRY                "VirtualListViewGroupA.rgs"
+  IDR_LISTVIEWWORKAREA         REGISTRY                "ListViewWorkAreaA.rgs"
+  IDR_LISTVIEWWORKAREAS        REGISTRY                "ListViewWorkAreasA.rgs"
+  IDR_VIRTUALLISTVIEWWORKAREA  REGISTRY                "VirtualListViewWorkAreaA.rgs"
+  IDR_VIRTUALLISTVIEWWORKAREAS REGISTRY                "VirtualListViewWorkAreasA.rgs"
+  IDR_LISTVIEWFOOTERITEM       REGISTRY                "ListViewFooterItemA.rgs"
+  IDR_LISTVIEWFOOTERITEMS      REGISTRY                "ListViewFooterItemsA.rgs"
+  IDR_OLEDATAOBJECT            REGISTRY                "OLEDataObjectA.rgs"
+  IDR_COMMONPROPERTIES         REGISTRY                "CommonPropertiesA.rgs"
+  IDR_STRINGPROPERTIES         REGISTRY                "StringPropertiesA.rgs"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 338, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "About ExplorerListView..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,281,206,50,14
+    CONTROL         2,IDC_ABOUT,"Static",SS_BITMAP | SS_REALSIZEIMAGE,10,10,132,169,WS_EX_TRANSPARENT
+    LTEXT           "ExplorerListView",IDC_NAME,124,10,207,11,0,WS_EX_TRANSPARENT
+    LTEXT           "<Version>",IDC_VERSION,124,21,207,26,0,WS_EX_TRANSPARENT
+    CONTROL         "Written by:",IDC_AUTHOR,"Static",WS_GROUP | 0x20,124,51,207,11
+    LTEXT           "<Authors>",IDC_AUTHORS,124,62,207,13,0,WS_EX_TRANSPARENT
+    LTEXT           "Thanks go to:",IDC_THANKS,124,82,207,11,0,WS_EX_TRANSPARENT
+    LTEXT           "<Thanks>",IDC_THANKSTO,124,93,207,33,0,WS_EX_TRANSPARENT
+    LTEXT           "Special Thanks go to:",IDC_SPECIALTHANKS,124,133,207,11,0,WS_EX_TRANSPARENT
+    CONTROL         "<SpecialThanks>",IDC_SPECIALTHANKSTO,"Static",WS_GROUP | 0x20,124,144,207,23
+    LTEXT           "Further information:",IDC_MORE,124,181,207,11,0,WS_EX_TRANSPARENT
+    LTEXT           "<Homepage>",IDC_HOMEPAGE,124,192,95,8,SS_NOTIFY,WS_EX_TRANSPARENT
+    LTEXT           "<Bugtracker>",IDC_BUGTRACKER,220,192,50,8,SS_NOTIFY,WS_EX_TRANSPARENT
+    CONTROL         3,IDC_PAYPAL,"Static",SS_BITMAP | SS_NOTIFY | SS_REALSIZEIMAGE,225,204,48,18,WS_EX_TRANSPARENT
+END
+
+IDD_COMMONPROPERTIES DIALOGEX 0, 0, 271, 136
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "&Disabled events:",IDC_STATIC,"Static",WS_GROUP | 0x20,5,7,53,8
+    CONTROL         "",IDC_DISABLEDEVENTSBOX,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,5,17,102,81
+    CONTROL         "&Items consist of:",IDC_STATIC,"Static",WS_GROUP | 0x20,112,7,54,8
+    CONTROL         "",IDC_ITEMBOUNDINGBOX,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,112,17,62,81
+    CONTROL         "Use &CallBacks for:",IDC_STATIC,"Static",WS_GROUP | 0x20,179,7,60,8
+    CONTROL         "",IDC_CALLBACKMASKBOX,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,179,17,87,81
+END
+
+IDD_STRINGPROPERTIES DIALOGEX 0, 0, 271, 136
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "&Property:",IDC_STATIC,"Static",WS_GROUP | 0x20,7,7,34,8
+    COMBOBOX        IDC_PROPERTYCOMBO,42,5,77,52,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROPERTYEDIT,7,22,257,106,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+#ifdef UNICODE
+    "1 TYPELIB ""ExLVwU.tlb""\r\n"
+#else
+    "1 TYPELIB ""ExLVwA.tlb""\r\n"
+#endif
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_LOADSETTINGS                "Load settings from a file..."
+    IDS_SAVESETTINGS                "Save the settings to a file..."
+    IDS_PROJNAME                    "ExLVw"
+    IDS_TITLECOMMONPROPERTIES       "Common"
+    IDS_DOCSTRINGCOMMONPROPERTIES   "Common Properties"
+    IDS_TITLESTRINGPROPERTIES "String"
+    IDS_DOCSTRINGSTRINGPROPERTIES "String Properties"
+END
+
+STRINGTABLE 
+BEGIN
+    IDPC_BKIMAGE            "Background Image"
+    IDPC_COLORS             "Colors"
+    IDPC_DRAGDROP           "Drag'n'Drop"
+    IDPC_GROUPING           "Item Grouping"
+    IDPC_HEADERCONTROL      "Header Control"
+    IDPC_TILEVIEW           "Tiles View"
+END
+
+STRINGTABLE 
+BEGIN
+    IDP_ALIGNMENTLEFT        "%i - Left"
+    IDP_ALIGNMENTCENTER      "%i - Center"
+    IDP_ALIGNMENTRIGHT       "%i - Right"
+    IDP_APPEARANCE2D        "%i - 2D"
+    IDP_APPEARANCE3D        "%i - 3D"
+    IDP_APPEARANCE3DLIGHT   "%i - 3D Light"
+    IDP_AUTOARRANGEITEMSNONE "%i - No Auto-Arrangement"
+    IDP_AUTOARRANGEITEMSNORMAL "%i - Normal Auto-Arrangement"
+    IDP_AUTOARRANGEITEMSINTELLIGENT "%i - Intelligent Auto-Arrangement"
+    IDP_BACKGROUNDDRAWMODENORMAL        "%i - Normal"
+    IDP_BACKGROUNDDRAWMODEBYPARENT        "%i - By Parent"
+    IDP_BACKGROUNDDRAWMODEBYPARENTWITHSHADOWTEXT   "%i - By Parent + Shadowed Text"
+    IDP_BKIMAGESTYLENORMAL    "%i - Normal"
+    IDP_BKIMAGESTYLETILED     "%i - Tiled"
+    IDP_BKIMAGESTYLEWATERMARK "%i - Watermark"
+    IDP_BORDERSTYLENONE     "%i - None"
+    IDP_BORDERSTYLEFIXEDSINGLE "%i - Fixed Single"
+    IDP_COLUMNHEADERVISIBILITYINVISIBLE  "%i - Invisible"
+    IDP_COLUMNHEADERVISIBILITYVISIBLEINDETAILSVIEW  "%i - Details View Only"
+    IDP_COLUMNHEADERVISIBILITYVISIBLEINALLVIEWS  "%i - All Views"
+    IDP_FULLROWSELECTDISABLED   "%i - Disabled"
+    IDP_FULLROWSELECTNORMALMODE "%i - Normal Mode"
+    IDP_FULLROWSELECTEXTENDEDMODE "%i - Extended Mode"
+    IDP_IMEMODEINHERIT          "%i - Inherit"
+    IDP_IMEMODENOCONTROL        "%i - No Control"
+    IDP_IMEMODEON               "%i - On"
+    IDP_IMEMODEOFF              "%i - Off"
+    IDP_IMEMODEDISABLE          "%i - Disable"
+    IDP_IMEMODEHIRAGANA         "%i - Hiragana DBC"
+    IDP_IMEMODEKATAKANA         "%i - Katakana DBC"
+    IDP_IMEMODEKATAKANAHALF     "%i - Katakana SBC"
+    IDP_IMEMODEALPHAFULL        "%i - Alphanumeric DBC"
+    IDP_IMEMODEALPHA            "%i - Alphanumeric SBC"
+    IDP_IMEMODEHANGULFULL       "%i - Hangul DBC"
+    IDP_IMEMODEHANGUL           "%i - Hangul SBC"
+    IDP_ITEMACTIVATIONMODEONESINGLECLICK    "%i - 1 Single Click"
+    IDP_ITEMACTIVATIONMODETWOSINGLECLICKS   "%i - 2 Single Clicks"
+    IDP_ITEMACTIVATIONMODEONEDOUBLECLICK    "%i - 1 Double Click"
+    IDP_ITEMALIGNMENTTOP    "%i - Top"
+    IDP_ITEMALIGNMENTLEFT   "%i - Left"
+    #ifdef _DEBUG
+		IDP_ITEMALIGNMENTBOTTOM "%i - Bottom"
+		IDP_ITEMALIGNMENTRIGHT  "%i - Right"
+	#endif
+    IDP_MOUSEPOINTERDEFAULT "%i - Default"
+    IDP_MOUSEPOINTERARROW   "%i - Arrow"
+    IDP_MOUSEPOINTERCROSS   "%i - Cross"
+    IDP_MOUSEPOINTERIBEAM   "%i - I-Cursor"
+    IDP_MOUSEPOINTERICON    "%i - Symbol"
+    IDP_MOUSEPOINTERSIZE    "%i - Size"
+    IDP_MOUSEPOINTERSIZENESW "%i - Size NE SW"
+END
+
+STRINGTABLE 
+BEGIN
+    IDP_MOUSEPOINTERSIZENS  "%i - Size N S"
+    IDP_MOUSEPOINTERSIZENWSE "%i - Size NW SE"
+    IDP_MOUSEPOINTERSIZEEW  "%i - Size E W"
+    IDP_MOUSEPOINTERUPARROW "%i - Up-Arrow"
+    IDP_MOUSEPOINTERHOURGLASS "%i - Hourglass"
+    IDP_MOUSEPOINTERNODROP  "%i - Can't Drop"
+    IDP_MOUSEPOINTERARROWHOURGLASS "%i - Arrow + Hourglass"
+    IDP_MOUSEPOINTERARROWQUESTION "%i - Arrow + Questionmark"
+    IDP_MOUSEPOINTERSIZEALL "%i - Size All"
+    IDP_MOUSEPOINTERHAND    "%i - Hand"
+    IDP_MOUSEPOINTERINSERTMEDIA "%i - Insert Media"
+    IDP_MOUSEPOINTERSCROLLALL "%i - Scroll All"
+    IDP_MOUSEPOINTERSCROLLN "%i - Scroll N"
+    IDP_MOUSEPOINTERSCROLLNE "%i - Scroll NE"
+    IDP_MOUSEPOINTERSCROLLE "%i - Scroll E"
+    IDP_MOUSEPOINTERSCROLLSE "%i - Scroll SE"
+END
+
+STRINGTABLE 
+BEGIN
+    IDP_MOUSEPOINTERSCROLLS "%i - Scroll S"
+    IDP_MOUSEPOINTERSCROLLSW "%i - Scroll SW"
+    IDP_MOUSEPOINTERSCROLLW "%i - Scroll W"
+    IDP_MOUSEPOINTERSCROLLNW "%i - Scroll NW"
+    IDP_MOUSEPOINTERSCROLLNS "%i - Scroll N S"
+    IDP_MOUSEPOINTERSCROLLEW "%i - Scroll E W"
+    IDP_MOUSEPOINTERCUSTOM  "%i - Custom"
+    IDP_OLEDRAGIMAGESTYLECLASSIC "%i - Classic (Always)"
+    IDP_OLEDRAGIMAGESTYLEAERO "%i - Aero (If Available)"
+    IDP_RIGHTTOLEFTNONE     "%i - None"
+    IDP_RIGHTTOLEFTTEXT  "%i - Text"
+    IDP_RIGHTTOLEFTLAYOUT  "%i - Layout"
+    IDP_RIGHTTOLEFTTEXTLAYOUT  "%i - Text + Layout"
+    IDP_SCROLLBARSNONE      "%i - None"
+    IDP_SCROLLBARSNORMAL    "%i - Normal"
+    IDP_SCROLLBARSFLAT      "%i - Flat"
+    IDP_SORTORDERASCENDING    "%i - Ascending"
+    IDP_SORTORDERDESCENDING   "%i - Descending"
+    IDP_SYSTEMDEFAULTCOLOR  "-1 - System Default"
+    IDP_TRANSPARENTCOLOR    "-1 - Transparent"
+    IDP_TOOLTIPSLABELTIPSSOME "%i - Label Tips (Icons + Tiles)"
+    IDP_TOOLTIPSLABELTIPSALWAYS  "%i - Label Tips (Any View)"
+    IDP_TOOLTIPSINFOTIPS "%i - Info Tips"
+    IDP_TOOLTIPSLABELANDINFOTIPS "%i - Label + Info Tips"
+    IDP_UNDERLINEDITEMSNONE "%i - None"
+    IDP_UNDERLINEDITEMSHOT  "%i - Hot"
+    IDP_UNDERLINEDITEMSCOLD "%i - Cold"
+    IDP_UNDERLINEDITEMSHOTCOLD "%i - Hot + Cold"
+    IDP_VIEWICONS           "%i - Icons"
+    IDP_VIEWSMALLICONS      "%i - Small Icons"
+    IDP_VIEWLIST            "%i - List"
+    IDP_VIEWDETAILS         "%i - Details"
+    IDP_VIEWTILES           "%i - Tiles"
+    IDP_VIEWEXTENDEDTILES   "%i - Extended Tiles"
+END
+
+STRINGTABLE 
+BEGIN
+    IDES_FORMATMISMATCH  "Specified format doesn't match format of data"
+    IDES_INVALIDOBJUSE  "Invalid object use"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#ifdef UNICODE
+  1 TYPELIB "ExLVwU.tlb"
+#else
+  1 TYPELIB "ExLVwA.tlb"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwU.ListViewWorkAreas.1 = s 'TimoSoft ListViewWorkAreas Class 1.7 (Unicode)'
+	{
+		CLSID = s '{30D537ED-13A0-4f8a-97F7-828ACDE6FEB8}'
+	}
+	ExLVwU.ListViewWorkAreas = s 'TimoSoft ListViewWorkAreas Class (Unicode)'
+	{
+		CLSID = s '{30D537ED-13A0-4f8a-97F7-828ACDE6FEB8}'
+		CurVer = s 'ExLVwU.ListViewItems.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {30D537ED-13A0-4f8a-97F7-828ACDE6FEB8} = s 'TimoSoft ListViewWorkAreas Class (Unicode)'
+		{
+			ProgID = s 'ExLVwU.ListViewWorkAreas.1'
+			VersionIndependentProgID = s 'ExLVwU.ListViewWorkAreas'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{9FC6639B-4237-4fb5-93B8-24049D39DF74}'
+		}
+	}
+}

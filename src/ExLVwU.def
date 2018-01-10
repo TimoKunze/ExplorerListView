@@ -1,0 +1,9 @@
+; ExLVwU.def: Declares the module parameters. (Unicode version)
+
+LIBRARY      "ExLVwU.ocx"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

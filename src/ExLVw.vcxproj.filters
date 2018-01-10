@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Generated Files">
+      <UniqueIdentifier>{40994576-b71b-40e5-9ab9-cd11b9a18755}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Generated Files">
+      <UniqueIdentifier>{424021ee-7fc0-40a0-b585-9ca0f1ee2fda}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files\ShBrowser">
+      <UniqueIdentifier>{3bdb35c0-cbf4-47b1-a34a-4323bf6fa61e}</UniqueIdentifier>
+      <Extensions>shbrowser\h</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Documents">
+      <UniqueIdentifier>{33b10e2b-74c7-4b54-b13a-a568d24f1c6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWindowEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultDrawPropertyControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultPropertyControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumOLEVERB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExLVw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplorerListView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewColumn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewColumns.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewFooterItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewFooterItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewGroups.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewItemContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewSubItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewSubItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewWorkArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListViewWorkAreas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceOLEDataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StringProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TargetOLEDataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualListViewColumn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualListViewGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualListViewItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualListViewWorkArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualListViewWorkAreas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExLVwA_i.c">
+      <Filter>Source Files\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExLVwU_i.c">
+      <Filter>Source Files\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IPropertyValueImpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExLVwA.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ExLVwU.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\About.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExLVwA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExLVwU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerListViewA.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerListViewU.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Paypal.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ToolBar disabled.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ToolBar enabled.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\doc\Unused parts of API.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="res\CommonPropertiesA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewWorkAreaU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CommonPropertiesU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerListViewA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ExplorerListViewU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewColumnA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewColumnsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewColumnsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewColumnU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewFooterItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewFooterItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewFooterItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewFooterItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewGroupA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewGroupsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewGroupsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewGroupU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewItemContainerA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewItemContainerU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewSubItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewSubItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewSubItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewSubItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewWorkAreaA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewWorkAreasA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewWorkAreasU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListViewWorkAreaU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OLEDataObjectA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OLEDataObjectU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StringPropertiesA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StringPropertiesU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewColumnA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewColumnU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewGroupA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewGroupU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewWorkAreaA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewWorkAreasA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListViewWorkAreasU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="ExLVwA.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+    <Midl Include="ExLVwU.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_IExplorerListViewEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewColumnEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewColumnsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewFooterItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewFooterItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewGroupEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewGroupsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewItemContainerEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewSubItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewSubItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewWorkAreaEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListViewWorkAreasEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IOLEDataObjectEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualListViewColumnEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualListViewGroupEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualListViewItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualListViewWorkAreaEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualListViewWorkAreasEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompilerFlags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWindowEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultDrawPropertyControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultPropertyControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DispIDs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumOLEVERB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplorerListView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HashFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HyperLinkEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICategorizeProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICreditsProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDrawPropertyControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGroupComparator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IItemComparator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IItemContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IListView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IListViewFooter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IListViewFooterCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IOwnerDataCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPropertyControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPropertyControlBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ISubItemCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewColumn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewColumns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewFooterItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewFooterItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewGroups.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewItemContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewSubItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewSubItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewWorkArea.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListViewWorkAreas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyNotifySinkImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceOLEDataObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TargetOLEDataObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UndocComctl32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualListViewColumn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualListViewGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualListViewItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualListViewWorkArea.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualListViewWorkAreas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExLVwA.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExLVwU.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shbrowser\definitions.h">
+      <Filter>Header Files\ShBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="shbrowser\IInternalMessageListener.h">
+      <Filter>Header Files\ShBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="shbrowser\IMessageListener.h">
+      <Filter>Header Files\ShBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="IPropertyValueImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPropertyValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SubItemControls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="res\resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\ExLVw.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

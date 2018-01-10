@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwU.OLEDataObject.1 = s 'TimoSoft OLEDataObject Class 1.7 (Unicode)'
+	{
+		CLSID = s '{94BBE739-5EEE-4d12-9073-0F2E0F2A9D19}'
+	}
+	ExLVwU.OLEDataObject = s 'TimoSoft OLEDataObject Class (Unicode)'
+	{
+		CLSID = s '{94BBE739-5EEE-4d12-9073-0F2E0F2A9D19}'
+		CurVer = s 'ExLVwU.OLEDataObject.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {94BBE739-5EEE-4d12-9073-0F2E0F2A9D19} = s 'TimoSoft OLEDataObject Class (Unicode)'
+		{
+			ProgID = s 'ExLVwU.OLEDataObject.1'
+			VersionIndependentProgID = s 'ExLVwU.OLEDataObject'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{9FC6639B-4237-4fb5-93B8-24049D39DF74}'
+		}
+	}
+}

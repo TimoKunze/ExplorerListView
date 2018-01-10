@@ -1,0 +1,44 @@
+Type=Exe
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\system32\STDOLE2.TLB#OLE Automation
+Object={9FC6639B-4237-4FB5-93B8-24049D39DF74}#1.7#0; ExLVwU.ocx
+Form=frmMain.frm
+Class=clsToolTip; clsToolTip.cls
+Module=basSubClassing; basSubClassing.bas
+Class=ISubclassedWindow; ISubclassedWindow.cls
+IconForm="frmMain"
+Startup="frmMain"
+HelpFile=""
+Title="Events"
+ExeName32="DragDrop.exe"
+Path32="bin"
+Command32=""
+Name="DragDrop"
+HelpContextID="0"
+CompatibleMode="0"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="TimoSoft"
+VersionFileDescription="Virtual Mode Drag'n'Drop sample for TimoSoft ExplorerListView 1.7"
+VersionProductName="TimoSoft ExplorerListView 1.7"
+CondComp="UseSubClassing = 1"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=0
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[MS Transaction Server]
+AutoRefresh=1

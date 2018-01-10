@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwA.ListViewColumns.1 = s 'TimoSoft ListViewColumns Class 1.7 (ANSI)'
+	{
+		CLSID = s '{BC5D8FEE-72F3-4faf-9E83-4398032BBBC4}'
+	}
+	ExLVwA.ListViewColumns = s 'TimoSoft ListViewColumns Class (ANSI)'
+	{
+		CLSID = s '{BC5D8FEE-72F3-4faf-9E83-4398032BBBC4}'
+		CurVer = s 'ExLVwA.ListViewColumns.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BC5D8FEE-72F3-4faf-9E83-4398032BBBC4} = s 'TimoSoft ListViewColumns Class (ANSI)'
+		{
+			ProgID = s 'ExLVwA.ListViewColumns.1'
+			VersionIndependentProgID = s 'ExLVwA.ListViewColumns'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2B7096FB-1E68-4e54-A2D9-4AA933EAC680}'
+		}
+	}
+}

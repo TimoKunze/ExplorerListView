@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwU.VirtualListViewWorkAreas.1 = s 'TimoSoft VirtualListViewWorkAreas Class 1.7 (Unicode)'
+	{
+		CLSID = s '{C2548C2A-DED6-4ab5-88EF-97D57A937235}'
+	}
+	ExLVwU.VirtualListViewWorkAreas = s 'TimoSoft VirtualListViewWorkAreas Class (Unicode)'
+	{
+		CLSID = s '{C2548C2A-DED6-4ab5-88EF-97D57A937235}'
+		CurVer = s 'ExLVwU.VirtualListViewWorkAreas.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C2548C2A-DED6-4ab5-88EF-97D57A937235} = s 'TimoSoft VirtualListViewWorkAreas Class (Unicode)'
+		{
+			ProgID = s 'ExLVwU.VirtualListViewWorkAreas.1'
+			VersionIndependentProgID = s 'ExLVwU.VirtualListViewWorkAreas'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{9FC6639B-4237-4fb5-93B8-24049D39DF74}'
+		}
+	}
+}

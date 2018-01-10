@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwU.ListViewSubItem.1 = s 'TimoSoft ListViewSubItem Class 1.7 (Unicode)'
+	{
+		CLSID = s '{E7532495-D232-45c8-B0FB-19C63F27FC54}'
+	}
+	ExLVwU.ListViewSubItem = s 'TimoSoft ListViewSubItem Class (Unicode)'
+	{
+		CLSID = s '{E7532495-D232-45c8-B0FB-19C63F27FC54}'
+		CurVer = s 'ExLVwU.ListViewSubItem.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {E7532495-D232-45c8-B0FB-19C63F27FC54} = s 'TimoSoft ListViewSubItem Class (Unicode)'
+		{
+			ProgID = s 'ExLVwU.ListViewSubItem.1'
+			VersionIndependentProgID = s 'ExLVwU.ListViewSubItem'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{9FC6639B-4237-4fb5-93B8-24049D39DF74}'
+		}
+	}
+}

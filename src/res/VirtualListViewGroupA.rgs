@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwA.VirtualListViewGroup.1 = s 'TimoSoft VirtualListViewGroup Class 1.7 (ANSI)'
+	{
+		CLSID = s '{6BFCD6D8-2B3D-4c1e-BA32-3C3A3097BA2A}'
+	}
+	ExLVwA.VirtualListViewGroup = s 'TimoSoft VirtualListViewGroup Class (ANSI)'
+	{
+		CLSID = s '{6BFCD6D8-2B3D-4c1e-BA32-3C3A3097BA2A}'
+		CurVer = s 'ExLVwA.VirtualListViewGroup.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6BFCD6D8-2B3D-4c1e-BA32-3C3A3097BA2A} = s 'TimoSoft VirtualListViewGroup Class (ANSI)'
+		{
+			ProgID = s 'ExLVwA.VirtualListViewGroup.1'
+			VersionIndependentProgID = s 'ExLVwA.VirtualListViewGroup'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2B7096FB-1E68-4e54-A2D9-4AA933EAC680}'
+		}
+	}
+}

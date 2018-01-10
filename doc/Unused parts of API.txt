@@ -1,0 +1,176 @@
+The following parts of the SysListView32 API (Windows 10) are not used:
+
+Control styles:
+---------------
+- LVS_SORT[AS|DES]CENDING (http://msdn.microsoft.com/en-us/library/bb774739.aspx)
+	-> poses too many problems (e. g. an item's text can't be set to LPSTR_TEXTCALLBACK with these styles)
+- LVS_EX_COLUMNOVERFLOW (http://msdn.microsoft.com/en-us/library/bb774732.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> probably not implemented or not usable by applications
+	-> we're using HDS_OVERFLOW instead
+- LVS_EX_? (0x20000000) (undocumented)
+	-> probably requires comctl32.dll 6.10 or newer
+	-> it's the last free LVS_EX_* flag
+	-> a listview with this style doesn't trigger WM_CONTEXTMENU on right mouse click
+	-> a listview with this style doesn't process the arrow keys and probably other keys
+	-> a listview with this style probably doesn't accept keyboard focus, at least items are always drawn like the control being not focused
+	-> it's not clear what it is doing
+
+Messages:
+---------
+- LVM_GETEMPTYTEXT (http://msdn.microsoft.com/en-us/library/bb774921.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> doesn't work, maybe not implemented
+- LVM_GETNEXTITEM (http://msdn.microsoft.com/en-us/library/bb761057.aspx)
+	-> using a property name like "NextItem" would be irritating, because there's already a method FindNextItem()
+- LVM_GETNEXTITEMINDEX (http://msdn.microsoft.com/en-us/library/bb761059.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> like LVM_GETNEXTITEM, but for virtual mode
+- LVM_MOVEGROUP (http://msdn.microsoft.com/en-us/library/bb761141.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> "Not implemented."
+- LVM_MOVEITEMTOGROUP (http://msdn.microsoft.com/en-us/library/bb761143.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> "Not implemented."
+- LVM_GETTILEINFO (http://msdn.microsoft.com/en-us/library/bb761081.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> not needed, we use LVM_GETITEM instead
+- LVM_SETTILEINFO (http://msdn.microsoft.com/en-us/library/bb761210.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> not needed, we use LVM_SETITEM instead
+
+Notifications:
+--------------
+- LVN_* (LVN_FIRST - 88) (undocumented)
+	-> used by Windows Explorer in Windows Vista
+	-> in Windows Explorer, the parent window returns 0x0
+- NM_HOVER (http://msdn.microsoft.com/en-us/library/bb775536.aspx)
+	-> we're using LVN_HOTTRACK instead
+- NM_RELEASEDCAPTURE (http://msdn.microsoft.com/en-us/library/bb775560.aspx)
+	-> is not needed
+- NM_RETURN (http://msdn.microsoft.com/en-us/library/bb775562.aspx)
+	-> we're using LVN_ITEMACTIVATE instead
+
+Group States:
+-------------
+- LVGS_HIDDEN (http://msdn.microsoft.com/en-us/library/bb774769.aspx)
+	-> not sure it's implemented
+
+Column Formats:
+---------------
+- LVCFMT_FIXED_RATIO (http://msdn.microsoft.com/en-us/library/bb774743.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> it's not clear what it is doing
+- LVCFMT_NO_DPI_SCALE (http://msdn.microsoft.com/en-us/library/bb774743.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> it's not clear what it is doing
+
+Background image styles:
+------------------------
+- LVBKIF_FLAG_ALPHABLEND (http://msdn.microsoft.com/en-us/library/bb774742.aspx)
+	-> "Valid only when LVBKIF_TYPE_WATERMARK is also specified. This flag indicates the bitmap provided via LVBKIF_TYPE_WATERMARK contains a valid alpha channel."
+	-> not sure it's implemented
+
+Structures:
+-----------
+- LVFOOTERINFO::pszText (http://msdn.microsoft.com/en-us/library/bb774748.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> "Not supported. Must be set to zero."
+- LVGF_EXTENDEDIMAGE, LVGROUP::iExtendedImage (http://msdn.microsoft.com/en-us/library/bb774769.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> seems to be not implemented, might be there for subseted groups
+- LVGMF_BORDERCOLOR, LVGROUPMETRICS::cr[Left|Top|Right|Bottom] (http://msdn.microsoft.com/en-us/library/bb774752.aspx)
+	-> "Not implemented."
+- LVTILEINFO (http://msdn.microsoft.com/en-us/library/bb774766.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> we use neither LVM_GETTILEINFO nor LVM_SETTILEINFO
+
+Notable IListView members:
+--------------------------
+- SetSelectionFlags
+	-> we don't know any flags that could be set
+- EditSubItem
+- EditGroupLabel
+- GetEditItem
+- SetRangeObject
+- GetGroupInfo
+	-> What is the 1st parameter for?
+- SetGroupInfo
+	-> What is the 1st parameter for?
+- GetFrozenItem
+- SetFrozenItem
+- GetFrozenSlot
+- SetFrozenSlot
+- GetViewMargin
+- SetViewMargin
+	-> works more or less, but leads to many drawing glitches (Groups, Footer Items, Header Control)
+	-> some view modes seem to ignore some margins
+- SetKeyboardSelected
+- GetVisibleSlotCount
+- GetColumnMargin
+- GetVisibleItemRange
+- SetTypeAheadFlags
+	-> we don't know any flags that could be set
+- EnableAlphaShadow
+
+Notable IVisualProperties members:
+----------------------------------
+- GetColor/VPCF_TEXTBACKGROUND
+	-> Which color is this?
+	-> requires Windows 7
+- SetColor/VPCF_TEXTBACKGROUND
+	-> Which color is this?
+	-> requires Windows 7
+
+
+
+The following parts of the SysHeader32 API (Windows 7 Beta 1) are not used (list incomplete!):
+
+Control styles:
+---------------
+- HDS_HIDDEN (http://msdn.microsoft.com/en-us/library/bb775241.aspx)
+	-> affects HDM_LAYOUT (which we don't use)
+	-> might already be set by listview automatically
+
+Messages:
+---------
+- HDM_[G|S]ETBITMAPMARGIN (http://msdn.microsoft.com/en-us/library/bb775314.aspx, http://msdn.microsoft.com/en-us/library/bb775357.aspx)
+	-> questionable benefits
+- HDM_[G|S]ETORDERARRAY (http://msdn.microsoft.com/en-us/library/bb775343.aspx, http://msdn.microsoft.com/en-us/library/bb775369.aspx)
+	-> we're using LVM_[G|S]ETCOLUMNORDERARRAY instead
+- HDM_LAYOUT (http://msdn.microsoft.com/en-us/library/bb775353.aspx)
+	-> questionable benefits
+- HDM_TRANSLATEACCELERATOR (http://msdn.microsoft.com/en-us/library/bb775373.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> "Not implemented."
+
+Notifications:
+--------------
+- HDN_BEGINFILTEREDIT (http://msdn.microsoft.com/en-us/library/bb775261.aspx)
+	-> probably requires comctl32.dll 6.10 or newer (MSDN says 4.70)
+	-> doesn't seem to report the column it is sent for
+- HDN_DROPDOWN (http://msdn.microsoft.com/en-us/library/bb775267.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> we're using LVN_COLUMNDROPDOWN instead
+- HDN_ENDFILTEREDIT (http://msdn.microsoft.com/en-us/library/bb775271.aspx)
+	-> probably requires comctl32.dll 6.10 or newer (MSDN says 4.70)
+	-> doesn't seem to report the column it is sent for
+- HDN_ITEMCHANGED (http://msdn.microsoft.com/en-us/library/bb775282.aspx)
+	-> is not needed
+- HDN_ITEMCLICK (http://msdn.microsoft.com/en-us/library/bb775286.aspx)
+	-> we're using LVN_COLUMNCLICK instead
+- HDN_ITEMKEYDOWN (http://msdn.microsoft.com/en-us/library/bb775292.aspx)
+	-> probably requires comctl32.dll 6.10 or newer (MSDN says 4.70)
+	-> is not needed
+- HDN_OVERFLOWCLICK (http://msdn.microsoft.com/en-us/library/bb775296.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> we're using LVN_COLUMNOVERFLOWCLICK instead
+
+Item Formats:
+-------------
+- HDF_FIXEDWIDTH (http://msdn.microsoft.com/en-us/library/bb775247.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> we're using LVCFMT_FIXED_WIDTH instead
+- HDF_SPLITBUTTON (http://msdn.microsoft.com/en-us/library/bb775247.aspx)
+	-> requires comctl32.dll 6.10 or newer
+	-> we're using LVCFMT_SPLITBUTTON instead

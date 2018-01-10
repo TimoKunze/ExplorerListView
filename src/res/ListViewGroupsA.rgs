@@ -1,0 +1,25 @@
+HKCR
+{
+	ExLVwA.ListViewGroups.1 = s 'TimoSoft ListViewGroups Class 1.7 (ANSI)'
+	{
+		CLSID = s '{21E339D4-38CA-4b40-8C1E-8D2247E7A131}'
+	}
+	ExLVwA.ListViewGroups = s 'TimoSoft ListViewGroups Class (ANSI)'
+	{
+		CLSID = s '{21E339D4-38CA-4b40-8C1E-8D2247E7A131}'
+		CurVer = s 'ExLVwA.ListViewGroups.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {21E339D4-38CA-4b40-8C1E-8D2247E7A131} = s 'TimoSoft ListViewGroups Class (ANSI)'
+		{
+			ProgID = s 'ExLVwA.ListViewGroups.1'
+			VersionIndependentProgID = s 'ExLVwA.ListViewGroups'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2B7096FB-1E68-4e54-A2D9-4AA933EAC680}'
+		}
+	}
+}

@@ -1,0 +1,9 @@
+; ExLVwA.def: Declares the module parameters. (ANSI version)
+
+LIBRARY      "ExLVwA.ocx"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

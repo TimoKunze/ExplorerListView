@@ -1,0 +1,43 @@
+HKCR
+{
+	ExLVwA.ExplorerListView.1 = s 'TimoSoft ExplorerListView Control 1.7 (ANSI)'
+	{
+		CLSID = s '{0A340D35-B48A-4e48-A3F0-E15D2133BAD6}'
+		'Insertable'
+	}
+	ExLVwA.ExplorerListView = s 'TimoSoft ExplorerListView Control 1.7 (ANSI)'
+	{
+		CLSID = s '{0A340D35-B48A-4e48-A3F0-E15D2133BAD6}'
+		CurVer = s 'ExLVwA.ExplorerListView.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0A340D35-B48A-4e48-A3F0-E15D2133BAD6} = s 'TimoSoft ExplorerListView Control 1.7 (ANSI)'
+		{
+			ProgID = s 'ExLVwA.ExplorerListView.1'
+			VersionIndependentProgID = s 'ExLVwA.ExplorerListView'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Implemented Categories'
+			{
+				'{40FC6ED4-2438-11CF-A3DB-080036F12502}'
+				'{40FC6ED5-2438-11CF-A3DB-080036F12502}'
+				'{0DE86A57-2BAA-11CF-A229-00AA003D7352}'
+				'{0DE86A53-2BAA-11CF-A229-00AA003D7352}'
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 1'
+			'MiscStatus' = s '0'
+			{
+				'1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{2B7096FB-1E68-4e54-A2D9-4AA933EAC680}'
+			'Version' = s '1.7'
+		}
+	}
+}
