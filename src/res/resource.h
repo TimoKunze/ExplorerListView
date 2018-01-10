@@ -8,12 +8,12 @@
 
 #define VERSION_MAJOR																			1
 #define VERSION_MINOR																			7
-#define VERSION_REVISION1																	3
+#define VERSION_REVISION1																	4
 #define VERSION_REVISION2																	0
-#define VERSION_BUILD																			469
-#define STRFILEVERSION																		"1.7.3.469"
+#define VERSION_BUILD																			470
+#define STRFILEVERSION																		"1.7.4.470"
 #define STRPRODUCTVERSION																	"1.7"
-#define STRTIMESTAMP																			"2018/01/09 22:51:34"
+#define STRTIMESTAMP																			"2018/01/10 20:52:41"
 
 #define IDB_EXPLORERLISTVIEW															1
 #define IDB_ABOUT																					2
