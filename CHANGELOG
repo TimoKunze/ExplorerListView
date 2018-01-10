@@ -1,0 +1,426 @@
+Version 1.7.4 - DD/MM/YYYY
+
+- Project published on GitHub.
+
+
+
+Version 1.7.3 - 13/11/2016
+
+- FIX: Dragging data from the header to the listview or vice versa could mess up OLE drag'n'drop events and drag image.
+
+
+
+Version 1.7.2 - 29/07/2016
+
+- Fixed some memory leaks that occurred when firing certain events.
+
+
+
+Version 1.7.1 - 27/01/2016
+
+- FIX: The control could crash during OLE drag'n'drop.
+- FIX: The control could crash the other process during OLE drag'n'drop, especially when IOLEDataObject::SetDropDescription() had been called.
+
+
+
+Version 1.7.0 - 24/01/2016
+
+- Added the IExplorerListView::FinishOLEDragDrop method. It should not be used if not really needed. It can be used to hide the drag image if execution of the OLEDragDrop or HeaderOLEDragDrop event takes a long time or if a message is displayed from within this event.
+
+
+
+Version 1.6.2 - 13/09/2015
+
+- FIX: It was not possible to change a group's properties, if the group id has been 0.
+- FIX: Sub-item controls did not work well on Windows 10.
+- Initial support for Windows 10.
+
+
+
+Version 1.6.1 - 23/02/2015
+
+- FIX: If the extended tiles view mode has been activated at design time, the control did start in normal tiles view mode.
+
+
+
+Version 1.6.0 - 01/01/2014
+
+- Added the *MouseWheel events for handling mouse wheel rotations.
+- Added the EditXClick, EditXDblClick, HeaderXClick, HeaderXDblClick, XClick, and XDblClick events for support of the extended mouse buttons.
+- Extended the EditMouse*, HeaderMouse*, ColumnMouse*, ItemMouse*, SubItemMouse*, and Mouse* events to support the extended mouse buttons.
+- FIX: The Font and MouseIcon properties could leak GDI resources.
+
+
+
+Version 1.5.3 - 03/11/2013
+
+- Extended the IExplorerListView::DisabledEvents property by the deItemGetDisplayInfo flag. It can be used to improve performance if the control is used in combination with the ShellListView control.
+- Performance improvements.
+
+
+
+Version 1.5.2 - 03/03/2013
+
+- FIX: The ResizedControlWindow event was not fired when it should have been fired.
+- FIX: The control did not stop auto-scrolling when dragging a column header and dropping it while the mouse cursor has been in the auto-scroll area.
+- Hopefully also fixed some other rarely reported situations in which auto-scrolling would not stop.
+
+
+
+Version 1.5.1 - 28/09/2012
+
+- Added the IListViewColumns::PositionsString property.
+- Initial support for Windows 8.
+
+
+
+Version 1.5.0 - 22/07/2012
+
+- Added the _IExplorerListViewEvents::CancelSubItemEdit event.
+- Added the _IExplorerListViewEvents::ConfigureSubItemControl event.
+- Added the _IExplorerListViewEvents::EndSubItemEdit event.
+- Added the _IExplorerListViewEvents::GetSubItemControl event.
+- Added the _IExplorerListViewEvents::InvokeVerbFromSubItemControl event.
+- Added the "SubItem Controls" VB6 sample. It demonstrates how to change appearance of sub-items and how to edit sub-items in-place.
+
+
+
+Version 1.4.0 - 03/04/2012
+
+- Added the _IExplorerListViewEvents::CollapsedGroup event.
+- Added the _IExplorerListViewEvents::ExpandedGroup event.
+- Added the _IExplorerListViewEvents::GroupGotFocus event.
+- Added the _IExplorerListViewEvents::GroupLostFocus event.
+- Added the _IExplorerListViewEvents::GroupSelectionChanged event.
+- Reimplemented the subclassing code of the VB6 samples to make it more robust.
+
+
+
+Version 1.3.2 - 12/02/2012
+
+- FIX: On Windows Vista and newer IExplorerListView::FindItem() and IListViewItem::FindNextItem() did return random items if no matching item was found.
+
+
+
+Version 1.3.1 - 15/01/2012
+
+- Fixed a crash that could occur during drag'n'drop.
+- Fixed a memory leak that occurred during drag'n'drop if Aero drag-images have been used.
+
+
+
+Version 1.3.0 - 01/11/2011
+
+- Added the IExplorerListView::GroupLocale property.
+- Added the IExplorerListView::GroupTextParsingFlags property.
+- Added the IListViewColumn::Locale property.
+- Added the IListViewColumn::TextParsingFlags property.
+- Extended the SortByConstants enumeration by 'sobNumericIntText', 'sobNumericFloatText', 'sobCurrencyText' and 'sobDateTimeText'.
+- Changed the default value for the iconIndex parameter of the ItemGetDisplayInfo event from 0 to -2 (no icon).
+
+
+
+Version 1.2.0 - 14/08/2011
+
+- Added the IListViewItem::SetInfoTipText method.
+- Added the _IExplorerListViewEvents::SettingItemInfoTipText event.
+- FIX: If the header control was visible, dragging an item to the top of the control sometimes did not auto-scroll the list.
+
+
+
+Version 1.1.1 - 21/05/2011
+
+- FIX: Disabling the control did not move the keyboard focus to the next control in the tab order.
+- FIX: The ResizedControlWindow event was fired when actually nothing had changed.
+
+
+
+Version 1.1.0 - 24/01/2011
+
+- FIX: The control could crash when it was destroyed.
+- FIX: Due do a bug in Microsoft ATL, the control could lose keyboard focus when it shouldn't. This problem occured in MDI applications only. Many thanks to Peter Schellenbach for his help.
+- Switched to Visual C++ 2010 and dropped support for Windows 2000.
+
+
+
+Version 1.0.0 - 07/11/2010
+
+- FIX: The control could crash in the VB6 IDE on Windows XP.
+
+
+
+Version 1.0.0 (RC1) - 20/06/2010
+
+- Added the IExplorerListView::CaretFooterItem property.
+- Added the IExplorerListView::FooterIntroText property.
+- Added the IExplorerListView::FooterItems property.
+- Added the IExplorerListView::HeaderOLEDragImageStyle property.
+- Added the IExplorerListView::IncludeHeaderInTabOrder property.
+- Added the IExplorerListView::MinItemRowsVisibleInGroups property.
+- Added the IExplorerListView::OLEDragImageStyle property.
+- Added the IExplorerListView::SelectedColumnBackColor property.
+- Added the IExplorerListView::TileViewSubItemForeColor property.
+- Added the IListViewGroup::FirstItem property.
+- Added the IListViewGroup::ItemCount property.
+- Added the IListViewGroup::Subseted property.
+- Added the IListViewGroup::SubsetLinkFocused property.
+- Added the IListViewGroup::SubsetLinkText property.
+- Added the IListViewItem::GroupIndex property.
+- Added the IVirtualListViewGroup::Subseted property.
+- Added the IVirtualListViewGroup::SubsetLinkFocused property.
+- Added the IVirtualListViewGroup::SubsetLinkText property.
+- Added the IExplorerListView::GetFooterRectangle() method.
+- Added the IExplorerListView::IsFooterVisible() method.
+- Added the IExplorerListView::ShowFooter() method.
+- Added the _IExplorerListViewEvents::FooterItemClick event.
+- Added the _IExplorerListViewEvents::FreeFooterItemData event.
+- Added the _IExplorerListViewEvents::ItemGetGroup event.
+- Added the _IExplorerListViewEvents::ItemGetOccurrencesCount event.
+- Added the _IExplorerListViewEvents::MapGroupWideToTotalItemIndex event.
+- Replaced IListViewItem::Height, IListViewItem::Left, IListViewItem::Top, IListViewItem::Width with IListViewItem::GetRectangle().
+- Replaced IListViewSubItem::Height, IListViewSubItem::Left, IListViewSubItem::Top, IListViewSubItem::Width with IListViewSubItem::GetRectangle().
+- Extended IListViewItems::Item by the optional parameter 'groupIndex'.
+- Extended IListViewItems::Contains() by the optional parameter 'groupIndex'.
+- Extended IListViewGroup::Add() by the optional parameters 'virtualItemCount', 'subsetLinkText' and 'subseted'.
+- Extended IExplorerListView::HitTest() by the optional parameters 'hitGroup' and 'hitFooterItem'.
+- Extended the _IExplorerListViewEvents::CustomDraw event by the parameter 'drawAllItems'.
+- Extended the DisabledEventsConstants enumeration by 'deFreeFooterItemData'.
+- Extended the ImageListConstants enumeration by 'ilFooterItems'.
+- Changed the type of IExplorerListView::AutoArrangeItems property from Boolean to an enumeration and added the "intelligent" mode where items get auto-arranged only if no item has been positioned manually.
+- Changed the type of IExplorerListView::FullRowSelect property from Boolean to an enumeration and added the "extended" mode in which marquee (lasso) item selection is still possible.
+- Changed the IListViewItem::TileViewColumns and IVirtualListViewItem::TileViewColumns properties. Both properties don't work with arrays of column indexes anymore, but with arrays of TILEVIEWSUBITEM structs.
+- Changed the TileViewColumns parameters of the _IExplorerListViewEvents::ItemGetDisplayInfo event and the IListViewItems::Add() method. Arrays of TILEVIEWSUBITEM structs are used now.
+- Changed the type of item and column texts from VARIANT to BSTR (BSTR is String in Visual Basic 6) to improve performance. When you previously specified 'Empty' to make the ItemGetDisplayInfo event raise, you now need vbNullString (NULL for C++).
+- Renamed the members of the ArrangementStyleConstants enumeration to fix naming collisions.
+- Changed the definitions of the RequestedInfoConstants enumeration to fix naming collisions with ComboListBoxControls.
+- Removed the 'modifierKeys' parameter of the IExplorerListView::CaretItem property. It wasn't really working anyway.
+- Extended the ListViewItemContainer class, so that it can be used in virtual mode, too. This makes it possible to support Drag'n'Drop in virtual mode.
+- Added a new property page that can be used to enter Unicode texts at design time.
+- FIX: Clearing the CaretItem property could select all items.
+- FIX: Using the CreatedHeaderControlWindow event to insert columns could lead to an infinite loop when the control window was recreated for any reason.
+- FIX: The HotItemChanged event was not fired.
+- FIX: Overlay images could be drawn too large.
+- FIX: The background image could get destroyed when it shouldn't.
+- FIX: The hit-testing flags 'htGroupStateImage', 'htGroupSubSetLink', 'htContent', 'htFooter', 'htGroupHeader', 'htGroupFooter', 'htGroupExpando', 'htGroupBackground' and 'htGroup' were never set.
+- FIX: The OptionListView WTL8 sample didn't work on all systems.
+- FIX: If the control was placed on a Form for which the KeyPreview feature was activated, the Form_Key* handler didn't receive key strokes like Alt+PgDown or Alt+Left, if the control had the keyboard focus.
+- FIX: The 'shift' parameter that many events have, often missed the ALT key.
+- Massively reduced the usage of GDI handles.
+- Made some internal changes that will make it easier for me to keep binary compatibility in future.
+- It is no longer necessary to subclass the control's parent window and reflect the WM_CONTEXTMENU message to make the ContextMenu event work.
+- Deploy (stripped) symbols with the binaries to make debugging easier. This are the pdb files in case you wonder.
+
+
+
+Version 1.0.0 (Beta 5) - 01/03/2009
+
+- Initial support for Windows 7.
+- Added the IExplorerListView::AutoSizeColumns property.
+- Added the IExplorerListView::BackgroundDrawMode property.
+- Added the IExplorerListView::CaretColumn property.
+- Added the IExplorerListView::CaretGroup property.
+- Added the IExplorerListView::CheckItemOnSelect property.
+- Added the IExplorerListView::ColumnHeaderVisibility property.
+- Added the IExplorerListView::DrawImagesAsynchronously property.
+- Added the IExplorerListView::EmptyMarkupTextAlignment property.
+- Added the IExplorerListView::hImageList property.
+- Added the IExplorerListView::JustifyIconColumns property.
+- Added the IExplorerListView::ResizableColumns property.
+- Added the IExplorerListView::ShowHeaderChevron property.
+- Added the IExplorerListView::ShowHeaderStateImages property.
+- Added the IExplorerListView::TileViewTileHeight property.
+- Added the IExplorerListView::TileViewTileWidth property.
+- Added the IExplorerListView::UseMinColumnWidths property.
+- Added the IListViewColumn::Caret property.
+- Added the IListViewColumn::DefaultWidth property.
+- Added the IListViewColumn::ID property.
+- Added the IListViewColumn::IdealWidth property.
+- Added the IListViewColumn::MinimumWidth property.
+- Added the IListViewColumn::Resizable property.
+- Added the IListViewColumn::ShellListViewColumnObject property as part of the ShellBrowser interface.
+- Added the IListViewColumn::ShowDropDownButton property.
+- Added the IListViewColumn::StateImageIndex property.
+- Added the IListViewGroup::Caret property.
+- Added the IListViewGroup::Collapsible property.
+- Added the IListViewGroup::DescriptionTextBottom property.
+- Added the IListViewGroup::DescriptionTextTop property.
+- Added the IListViewGroup::IconIndex property.
+- Added the IListViewGroup::Index property.
+- Added the IListViewGroup::Selected property.
+- Added the IListViewGroup::ShowHeader property.
+- Added the IListViewGroup::SubtitleText property.
+- Added the IListViewGroup::TaskText property.
+- Added the IListViewItem::ShellListViewItemObject property as part of the ShellBrowser interface.
+- Added the IVirtualListViewColumn::Caret property.
+- Added the IVirtualListViewColumn::DefaultWidth property.
+- Added the IVirtualListViewColumn::MinimumWidth property.
+- Added the IVirtualListViewColumn::Resizable property.
+- Added the IVirtualListViewColumn::ShowDropDownButton property.
+- Added the IVirtualListViewColumn::StateImageIndex property.
+- Added the IVirtualListViewGroup::Caret property.
+- Added the IVirtualListViewGroup::Collapsible property.
+- Added the IVirtualListViewGroup::DescriptionTextBottom property.
+- Added the IVirtualListViewGroup::DescriptionTextTop property.
+- Added the IVirtualListViewGroup::IconIndex property.
+- Added the IVirtualListViewGroup::Selected property.
+- Added the IVirtualListViewGroup::ShowHeader property.
+- Added the IVirtualListViewGroup::SubtitleText property.
+- Added the IVirtualListViewGroup::TaskText property.
+- Added the IExplorerListView::GetHeaderChevronRectangle() method.
+- Added the IExplorerListView::SetFocusToHeader() method.
+- Added the IListViewColumn::GetDropDownRectangle() method.
+- Added the IListViewGroup::GetRectangle() method.
+- Added the IListViewItem::IsVisible() method.
+- Added the IOLEDataObject::GetDropDescription() method.
+- Added the IOLEDataObject::SetDropDescription() method.
+- Added the _IExplorerListViewEvents::ChangedSortOrder event.
+- Added the _IExplorerListViewEvents::ChangingSortOrder event.
+- Added the _IExplorerListViewEvents::ColumnClick event. This event should be used for updating the sorting settings, setting the selected column and similar stuff.
+- Added the _IExplorerListViewEvents::ColumnDropDown event.
+- Added the _IExplorerListViewEvents::ColumnStateImageChanged event.
+- Added the _IExplorerListViewEvents::ColumnStateImageChanging event.
+- Added the _IExplorerListViewEvents::EmptyMarkupTextLinkClick event.
+- Added the _IExplorerListViewEvents::GroupAsynchronousDrawFailed event.
+- Added the _IExplorerListViewEvents::GroupTaskLinkClick event.
+- Added the _IExplorerListViewEvents::HeaderChevronClick event.
+- Added the _IExplorerListViewEvents::HeaderGotFocus event.
+- Added the _IExplorerListViewEvents::HeaderKeyDown event.
+- Added the _IExplorerListViewEvents::HeaderKeyPress event.
+- Added the _IExplorerListViewEvents::HeaderKeyUp event.
+- Added the _IExplorerListViewEvents::HeaderLostFocus event.
+- Added the _IExplorerListViewEvents::HeaderOLEDragEnterPotentialTarget event.
+- Added the _IExplorerListViewEvents::HeaderOLEDragLeavePotentialTarget event.
+- Added the _IExplorerListViewEvents::HeaderOLEReceivedNewData event.
+- Added the _IExplorerListViewEvents::ItemAsynchronousDrawFailed event.
+- Added the _IExplorerListViewEvents::OLEDragEnterPotentialTarget event.
+- Added the _IExplorerListViewEvents::OLEDragLeavePotentialTarget event.
+- Added the _IExplorerListViewEvents::OLEReceivedNewData event.
+- Removed the IExplorerListView::HideColumnHeaders property. Use the IExplorerListView::ColumnHeaderVisibility property instead.
+- Removed the IExplorerListView::hExtraLargeImageList property. Use the IExplorerListView::hImageList property instead.
+- Removed the IExplorerListView::hHeaderImageList property. Use the IExplorerListView::hImageList property instead.
+- Removed the IExplorerListView::hLargeImageList property. Use the IExplorerListView::hImageList property instead.
+- Removed the IExplorerListView::hSmallImageList property. Use the IExplorerListView::hImageList property instead.
+- Removed the IExplorerListView::hStateImageList property. Use the IExplorerListView::hImageList property instead.
+- Extended IExplorerListView::HeaderOLEDrag() by the parameter 'itemCountToDisplay'.
+- Extended IExplorerListView::OLEDrag() by the parameter 'itemCountToDisplay'.
+- Extended IExplorerListView::SortGroups() by the parameter 'thirdCriterion'.
+- Extended IExplorerListView::SortItems() by the parameter 'fifthCriterion'.
+- Extended IListViewColumn::Add() by the parameters 'minimumWidth', 'stateImageIndex', 'resizable' and 'showDropDownButton'.
+- Extended IListViewGroup::Add() by the parameters 'iconIndex', 'collapsible', 'collapsed', 'groupFooterText', 'footerAlignment', 'subTitleText', 'taskText' and 'showHeader'.
+- Extended the _IExplorerListViewEvents::ContextMenu event by the parameter 'showDefaultMenu'.
+- Extended the _IExplorerListViewEvents::GroupCustomDraw event by the parameter 'footerAlignment' and renamed the alignment parameter to 'headerAlignment'.
+- Extended the _IExplorerListViewEvents::HeaderContextMenu event by the parameter 'showDefaultMenu'.
+- Extended the _IExplorerListViewEvents::ItemGetDisplayInfo event by the parameter 'groupID'.
+- Changed the type of the 'tileViewColumns' parameter of the _IExplorerListViewEvents::ItemGetDisplayInfo event from Variant to array of Long.
+- Changed the _IExplorerListViewEvents::OLEDragDrop event to allow changing the drop target. While this is not useful for a plain listview, it gives you more control over drag'n'drop if a ShellListView control is attached and ExplorerListView is used for shell-browsing.
+- Extended the ColumnIdentifierTypeConstants enumeration by 'citID'.
+- Extended the DisabledEventsConstants enumeration by 'deHeaderKeyboardEvents'.
+- Extended the GroupIdentifierTypeConstants enum by 'gitIndex'.
+- Extended the HeaderHitTestConstants enumeration by 'hhtItemStateImage', 'hhtItemDropDownPart' and 'hhtChevron'.
+- Extended the HitTestConstants enumeration by 'htGroupStateImage', 'htGroupSubSetLink', 'htContent', 'htFooter', 'htGroupHeader', 'htGroupFooter', 'htGroupExpando', 'htGroupBackground' and 'htGroup'.
+- Extended the RequestedInfoConstants enumeration by 'riGroupID'.
+- Extended the SortByConstants enumeration by 'sobShell'.
+- Extended the ViewConstants enumeration by 'vExtendedTiles'.
+- On Windows Vista column filters can be set to date values now.
+- Rewrote large parts of the drag'n'drop code resulting in e. g. much better drag-images.
+- FIX: The IExplorerListView::DropHilitedItem didn't always clear the previous drop-highlighting.
+- FIX: Changing the IListViewGroup::ID property also changed the group's text alignment.
+- FIX: Keyboard input wasn't processed if the control was placed within a VB6 UserControl.
+- FIX: The TAB key didn't move the focus to the next control if the control was placed within a VB6 UserControl.
+- FIX: Keyboard focus wasn't handled correctly anymore.
+- FIX: Automatic drag-image creation in IExplorerListView::HeaderOLEDrag() was broken.
+- FIX: IExplorerListView::HitTest() returned partially wrong hit-test flags.
+- FIX: Changes were not applied implicitly when jumping between multiple instances of the control with the property pages opened.
+- Fixed some GDI handle leaks.
+- Fixed some drawing glitches.
+- Removed the data-binding stuff (it was probably broken anyway).
+- Switched to Visual C++ 2008 and dropped support for Windows 9x, Me and NT 4.0.
+- Ported the WTL7 samples to Visual C++ 2008/WTL8.
+- Made the samples DPI aware.
+- Linked the bug tracking system.
+
+
+
+Version 1.0.0 (Beta 4) - 06/10/2006
+
+- Added the IVirtualListViewItem::Index property.
+- Added the IListViewGroups::Contains() method.
+- Added the _IExplorerListViewEvents::IncrementalSearching event.
+- Renamed the IExplorerListView::EmptyText property to EmptyMarkupText.
+- Removed the IListViewGroup::Hidden property.
+- Removed the IVirtualListViewGroup::Hidden property.
+- Removed an ugly hack, because it caused several problems. Unfortunately this means, that the ContextMenu event won't work out of the box anymore and that Unicode support is limited. To make both things work 100%, you must implement subclassing. See the FAQ for details.
+- Passing an index of -1, IListViewItems::Item won't fail anymore. Instead it will return an IListViewItem object that may be used to set some properties for all items in the control at once.
+- Improved IExplorerListView::Font, IExplorerListView::HotMouseIcon and IExplorerListView::MouseIcon.
+- FIX: The control crashed if it was destroyed from within an event handler.
+- FIX: Moving the control without resizing it could lead to a control width or height of 0.
+- FIX: If a version prior to 6.0 of comctl32.dll was used, inserting items could mess up some internal data structures. This also led to items reporting wrong values for the ItemData property.
+- FIX: If a version prior to 6.0 of comctl32.dll was used, deleting items messed up some internal data structures. This also led to items reporting wrong values for the ItemData property.
+- FIX: If a version prior to 6.0 of comctl32.dll was used, sorting items messed up some internal data structures. This also led to wrong sorting.
+- FIX: IListViewItems::Contains() didn't return the correct value in some situations.
+- FIX: The TextBackColor parameter of the _IExplorerListViewEvents::CustomDraw event was initialized with a inappropriate value.
+- FIX: IListViewGroups::RemoveAll() interfered with IExplorerListView::ShowGroups.
+- FIX: Rewrote IExplorerListView::LoadSettingsFromFile() and IExplorerListView::SaveSettingsToFile() and updated the file format, because the old format may crash IExplorerListView::LoadSettingsFromFile().
+- FIX: Changing the font could crash the control.
+- FIX: The control could crash if a ListViewItemContainer object ran out of scope.
+- FIX: IListViewItemContainer::Clone() didn't work as expected.
+- FIX: IListViewItemContainer::RemoveAll() didn't work as expected.
+- FIX: It was possible to create two ListViewItemContainer objects with the same internal ID. This caused various problems.
+- Clicking the caret item of an inactive ExplorerListView control no longer starts label-editing mode for this item.
+- Fixed some drawing glitches.
+- Switched to Visual C++ 2005; fixed compiler errors and warnings.
+- Began to implement the ShellBrowser interface.
+- Improved the documentation. Now properties are displayed as such.
+- Ported the WTL7 samples to Visual C++ 2005.
+
+
+
+Version 1.0.0 (Beta 3) - 01/11/2005
+
+- Converted the control into a single-window solution. This is easier to handle and needs less resources.
+- Removed the _IExplorerListViewEvents::ListViewGotFocus event.
+- Removed the _IExplorerListViewEvents::ListViewLostFocus event.
+- Renamed the _IExplorerListViewEvents::CreatedEditControl event to _IExplorerListViewEvents::CreatedEditControlWindow.
+- Renamed the _IExplorerListViewEvents::DestroyedEditControl event to _IExplorerListViewEvents::DestroyedEditControlWindow.
+- Renamed the _IExplorerListViewEvents::CreatedHeaderControl event to _IExplorerListViewEvents::CreatedHeaderControlWindow.
+- Renamed the _IExplorerListViewEvents::DestroyedHeaderControl event to _IExplorerListViewEvents::DestroyedHeaderControlWindow.
+- Renamed the _IExplorerListViewEvents::DestroyedListViewControl event to _IExplorerListViewEvents::DestroyedControlWindow.
+- Renamed the _IExplorerListViewEvents::RecreatedListViewControl event to _IExplorerListViewEvents::RecreatedControlWindow.
+- Added the _IExplorerListViewEvents::ResizedControlWindow event.
+- FIX: The behavior of the IExplorerListView::Enabled property was different from other controls.
+- FIX: The IExplorerListView::Group*ForeColor properties couldn't be changed on-the-fly.
+- FIX: Auto-scrolling tried to scroll the control after the maximum scroll position was reached.
+- FIX: Drag-images for non-OLE-drag'n'drop didn't play well with auto-scrolling.
+- FIX: Under certain circumstances, drag-images contained the icons only.
+- FIX: Drag-images with 32bpp icons looked ugly.
+- FIX: Drag-images didn't contain overlay images.
+- FIX: Drag-image creation for multiple items could fail.
+- Made IExplorerListView::HeaderOLEDrag() and IExplorerListView::OLEDrag() more robust.
+- Some minor bugfixes.
+- Improved Unicode support.
+- Improved Drag'n'Drop support.
+- Simplified some internal parts of the control.
+- Added some C++/WTL samples.
+- Improved documentation.
+- Improved code quality.
+
+
+
+Version 1.0.0 (Beta 2) - 29/09/2005
+
+- Added the IExplorerListView::UseSystemFont property.
+- Added IExplorerListView::SaveSettingsToFile() and IExplorerListView::LoadSettingsFromFile(). These methods can be used to save/load a control's properties to/from a file.
+- Implemented the 'modifierKeys' parameter of IExplorerListView::CaretItem. However, it always behaves like Windows 2000 and not like the OS it is running on.
+- Extended IExplorerListView::CaretItem with a parameter 'changeFocusOnly'.
+- FIX: A problem with the FreeItemData event could crash the control if the used comctl32.dll was older than version 6.0.
+- FIX: OLE drag-images weren't working if the "Show window contents while dragging" feature was disabled.
+- FIX: There was a potential buffer overflow in the IExplorerListView::EmptyText property.
+- FIX: The Font property leaked GDI objects.
+- FIX: The deHeaderMouseEvents flag blocked not only the header control's mouse events but also its click events.
+- Revised the Font property.
+
+
+
+Version 1.0.0 (Beta 1) - 30/07/2005
+
+- First public release.
