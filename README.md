@@ -16,7 +16,7 @@
 # ExplorerListView
 An ActiveX control for Visual Basic 6 that can display items in various kinds of list like views.
 
-I've developed this ActiveX control in 2005 and did update it on a regular basis until 2016. Currently I have little interest to maintain this project any longer, but I think the code might be of some use to others.
+I've developed this ActiveX control between 2005 and 2010 and did update it on a regular basis until 2016. Currently I have little interest to maintain this project any longer, but I think the code might be of some use to others.
 
 # Before you make changes
 If you make changes to the code and deploy the binary, keep in mind that ActiveX controls are COM components and therefore should stay binary compatible as long as you don't change the COM object's, i.e. the ActiveX control's public class name and GUIDs. Otherwise people using these components are likely to end up in the famous COM hell.
