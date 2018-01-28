@@ -501,7 +501,7 @@
   <ItemGroup>
     <ClCompile Include="AboutDlg.cpp" />
     <ClCompile Include="CommonProperties.cpp" />
-    <ClCompile Include="CWindowEx.cpp" />
+    <ClCompile Include="CWindowEx2.cpp" />
     <ClCompile Include="DefaultDrawPropertyControl.cpp" />
     <ClCompile Include="DefaultPropertyControl.cpp" />
     <ClCompile Include="EnumOLEVERB.cpp" />
@@ -656,7 +656,7 @@
     <ClInclude Include="ClassFactory.h" />
     <ClInclude Include="CommonProperties.h" />
     <ClInclude Include="CompilerFlags.h" />
-    <ClInclude Include="CWindowEx.h" />
+    <ClInclude Include="CWindowEx2.h" />
     <ClInclude Include="DefaultDrawPropertyControl.h" />
     <ClInclude Include="DefaultPropertyControl.h" />
     <ClInclude Include="DispIDs.h" />

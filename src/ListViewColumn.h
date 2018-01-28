@@ -22,7 +22,7 @@
 #else
 	#include "ExLVwA.h"
 #endif
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "_IListViewColumnEvents_CP.h"
 #include "helpers.h"
 #include "ExplorerListView.h"

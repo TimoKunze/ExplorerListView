@@ -23,7 +23,7 @@
 #else
 	#include "ExLVwA.h"
 #endif
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "_IListViewFooterItemEvents_CP.h"
 #include "helpers.h"
 #include "ExplorerListView.h"

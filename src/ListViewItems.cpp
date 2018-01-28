@@ -1196,7 +1196,7 @@ void ListViewItems::OptimizeFilter(FilteredPropertyConstants filteredProperty)
 {
 	ATLASSERT(IsWindow(hWndLvw));
 
-	CWindowEx(hWndLvw).InternalSetRedraw(FALSE);
+	CWindowEx2(hWndLvw).InternalSetRedraw(FALSE);
 	// sort in reverse order
 	#ifdef USE_STL
 		itemsToRemove.sort(std::greater<int>());
@@ -1217,7 +1217,7 @@ void ListViewItems::OptimizeFilter(FilteredPropertyConstants filteredProperty)
 			SendMessage(hWndLvw, LVM_DELETEITEM, itemsToRemove.GetAt(itemsToRemove.FindIndex(i)), 0);
 		}
 	#endif
-	CWindowEx(hWndLvw).InternalSetRedraw(TRUE);
+	CWindowEx2(hWndLvw).InternalSetRedraw(TRUE);
 
 	return S_OK;
 }

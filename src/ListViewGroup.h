@@ -24,7 +24,7 @@
 #else
 	#include "ExLVwA.h"
 #endif
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "_IListViewGroupEvents_CP.h"
 #include "helpers.h"
 #include "ExplorerListView.h"

@@ -741,7 +741,7 @@ STDMETHODIMP ListViewColumn::get_Height(OLE_YSIZE_PIXELS* pValue)
 	HWND hWndHeader = properties.GetHeaderHWnd();
 	ATLASSERT(IsWindow(hWndHeader));
 
-	WTL::CRect rc;
+	CRect rc;
 	if(SendMessage(hWndHeader, HDM_GETITEMRECT, properties.columnIndex, reinterpret_cast<LPARAM>(&rc))) {
 		*pValue = rc.Height();
 		return S_OK;
