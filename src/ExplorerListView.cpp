@@ -2524,10 +2524,10 @@ HIMAGELIST ExplorerListView::CreateLegacyDragImage(LVITEMINDEX& itemIndex, LPPOI
 						}
 						ATLASSUME(pImgLst);
 
-						DWORD flags = 0;
-						pImgLst->GetItemFlags(subItem.iImage, &flags);
+						DWORD imageFlags = 0;
+						pImgLst->GetItemFlags(subItem.iImage, &imageFlags);
 						pImgLst->Release();
-						pSubItemImageHasAlpha[subItemIndex - 1] = ((flags & ILIF_ALPHA) == ILIF_ALPHA);
+						pSubItemImageHasAlpha[subItemIndex - 1] = ((imageFlags & ILIF_ALPHA) == ILIF_ALPHA);
 					}
 
 					// background
@@ -2778,9 +2778,9 @@ BOOL ExplorerListView::CreateLegacyOLEDragImage(IListViewItemContainer* pItems, 
 			}
 			ATLASSUME(pImgLst);
 
-			DWORD flags = 0;
-			pImgLst->GetItemFlags(0, &flags);
-			if(flags & ILIF_ALPHA) {
+			DWORD imageFlags = 0;
+			pImgLst->GetItemFlags(0, &imageFlags);
+			if(imageFlags & ILIF_ALPHA) {
 				// the drag image makes use of the alpha channel
 				IMAGEINFO imageInfo = {0};
 				ImageList_GetImageInfo(hImageList, 0, &imageInfo);
@@ -2897,9 +2897,9 @@ BOOL ExplorerListView::CreateLegacyOLEHeaderDragImage(IListViewColumn* pColumn, 
 			}
 			ATLASSUME(pImgLst);
 
-			DWORD flags = 0;
-			pImgLst->GetItemFlags(0, &flags);
-			if(flags & ILIF_ALPHA) {
+			DWORD imageFlags = 0;
+			pImgLst->GetItemFlags(0, &imageFlags);
+			if(imageFlags & ILIF_ALPHA) {
 				// the drag image makes use of the alpha channel
 				IMAGEINFO imageInfo = {0};
 				ImageList_GetImageInfo(hImageList, 0, &imageInfo);
@@ -3781,7 +3781,7 @@ STDMETHODIMP ExplorerListView::BeginSubItemEdit(int itemIndex, int subItemIndex,
 			if(CTheme::IsThemingSupported()) {
 				WCHAR pSubAppNameBuffer[300] = {0};
 				LPWSTR pSubAppName = pSubAppNameBuffer;
-				ATOM valueSubAppName = reinterpret_cast<ATOM>(GetPropW(*this, L"#43281"));
+				ATOM valueSubAppName = static_cast<ATOM>(LOWORD(GetPropW(*this, L"#43281")));
 				if(valueSubAppName) {
 					GetAtomNameW(valueSubAppName, pSubAppNameBuffer, 300);
 					if(lstrlenW(pSubAppNameBuffer) == 1 && pSubAppNameBuffer[0] == L'$') {
@@ -3793,7 +3793,7 @@ STDMETHODIMP ExplorerListView::BeginSubItemEdit(int itemIndex, int subItemIndex,
 				themeAppName = pSubAppName;
 				WCHAR pSubIDListBuffer[300] = {0};
 				LPWSTR pSubIDList = pSubIDListBuffer;
-				ATOM valueSubIDList = reinterpret_cast<ATOM>(GetPropW(*this, L"#43280"));
+				ATOM valueSubIDList = static_cast<ATOM>(LOWORD(GetPropW(*this, L"#43280")));
 				if(valueSubIDList) {
 					GetAtomNameW(valueSubIDList, pSubIDListBuffer, 300);
 					if(lstrlenW(pSubIDListBuffer) == 1 && pSubIDListBuffer[0] == L'$') {
@@ -3984,8 +3984,9 @@ STDMETHODIMP ExplorerListView::EndSubItemEdit(int itemIndex, int subItemIndex, i
 
 							if(FAILED(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHLVM_ENDSUBITEMEDIT, 0, reinterpret_cast<LPARAM>(&subItemControlData)))) {
 								// cancelled by ShellListView, e.g. because the property is read-only
-								LVITEMINDEX parentItemIndex = {itemIndex, 0};
-								CComPtr<IListViewSubItem> pSubItem = ClassFactory::InitListSubItem(parentItemIndex, subItemIndex, this);
+								parentItemIndex.iItem = itemIndex;
+								parentItemIndex.iGroup = 0;
+								pSubItem = ClassFactory::InitListSubItem(parentItemIndex, subItemIndex, this);
 
 								Raise_CancelSubItemEdit(pSubItem, static_cast<SubItemEditModeConstants>(mode));
 							}
@@ -4491,9 +4492,9 @@ int ExplorerListView::CompareGroups(int groupID1, int groupID2)
 			case sobShell:
 				#ifdef INCLUDESHELLBROWSERINTERFACE
 					if(shellBrowserInterface.pInternalMessageListener) {
-						LONG groups[2] = {groupID1, groupID2};
+						LONG grps[2] = {groupID1, groupID2};
 						BOOL wasHandled = FALSE;
-						result = static_cast<short>(HRESULT_CODE(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHLVM_COMPAREGROUPS, reinterpret_cast<WPARAM>(groups), reinterpret_cast<LPARAM>(&wasHandled))));
+						result = static_cast<short>(HRESULT_CODE(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHLVM_COMPAREGROUPS, reinterpret_cast<WPARAM>(grps), reinterpret_cast<LPARAM>(&wasHandled))));
 						if(!wasHandled) {
 							result = 0;
 						}
@@ -4696,10 +4697,10 @@ int ExplorerListView::CompareItemsEx(int itemIndex1, int itemIndex2)
 			earlyAbort = TRUE;
 			continue;
 		} else if(sortingSettings.sortingCriteria[i] == sobCustom) {
-			LVITEMINDEX i = {itemIndex1, 0};
-			CComPtr<IListViewItem> pLvwItem1 = ClassFactory::InitListItem(i, this, FALSE);
-			i.iItem = itemIndex2;
-			CComPtr<IListViewItem> pLvwItem2 = ClassFactory::InitListItem(i, this, FALSE);
+			LVITEMINDEX itmIndex = {itemIndex1, 0};
+			CComPtr<IListViewItem> pLvwItem1 = ClassFactory::InitListItem(itmIndex, this, FALSE);
+			itmIndex.iItem = itemIndex2;
+			CComPtr<IListViewItem> pLvwItem2 = ClassFactory::InitListItem(itmIndex, this, FALSE);
 			if(FAILED(Raise_CompareItems(pLvwItem1, pLvwItem2, reinterpret_cast<CompareResultConstants*>(&result)))) {
 				result = 0;
 				earlyAbort = TRUE;
@@ -5903,7 +5904,7 @@ STDMETHODIMP ExplorerListView::put_AbsoluteBkImagePosition(VARIANT_BOOL newValue
 				bkImage.ulFlags = LVBKIF_SOURCE_NONE | LVBKIF_STYLE_NORMAL | LVBKIF_TYPE_WATERMARK;
 			}
 
-			BOOL b = FALSE;
+			b = FALSE;
 			if(bkImage.hbm) {
 				bkImage.cchImageMax = 0;
 				/* SysListView32 destroys its current bitmap if it receives LVM_SETBKIMAGE, so re-assign a copy
@@ -6515,8 +6516,6 @@ STDMETHODIMP ExplorerListView::put_BkImage(VARIANT newValue)
 		case VT_UI4:
 		case VT_INT:
 		case VT_UINT: {
-			VARIANT v;
-			VariantInit(&v);
 			if(SUCCEEDED(VariantChangeType(&v, &newValue, 0, VT_I4))) {
 				HBITMAP hNewBitmap = CopyBitmap(static_cast<HBITMAP>(LongToHandle(newValue.lVal)));
 				if(IsWindow() && RunTimeHelper::IsCommCtrl6()) {
@@ -11726,14 +11725,14 @@ STDMETHODIMP ExplorerListView::put_VirtualItemCount(VARIANT_BOOL noScroll/* = VA
 		SetDirty(TRUE);
 
 		if(IsWindow()) {
-			DWORD flags = 0;
+			DWORD itemCountFlags = 0;
 			if(noScroll != VARIANT_FALSE) {
-				flags |= LVSICF_NOSCROLL;
+				itemCountFlags |= LVSICF_NOSCROLL;
 			}
 			if(noInvalidateAll != VARIANT_FALSE) {
-				flags |= LVSICF_NOINVALIDATEALL;
+				itemCountFlags |= LVSICF_NOINVALIDATEALL;
 			}
-			SendMessage(LVM_SETITEMCOUNT, properties.virtualItemCount, flags);
+			SendMessage(LVM_SETITEMCOUNT, properties.virtualItemCount, itemCountFlags);
 		}
 		FireOnChanged(DISPID_EXLVW_VIRTUALITEMCOUNT);
 	}
@@ -12439,11 +12438,11 @@ STDMETHODIMP ExplorerListView::HeaderHitTest(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS 
 	}
 
 	if(containedSysHeader32.IsWindow()) {
-		UINT flags = static_cast<UINT>(*pHitTestDetails);
-		int column = HeaderHitTest(x, y, &flags);
+		UINT hitTestFlags = static_cast<UINT>(*pHitTestDetails);
+		int column = HeaderHitTest(x, y, &hitTestFlags);
 
 		if(pHitTestDetails) {
-			*pHitTestDetails = static_cast<HeaderHitTestConstants>(flags);
+			*pHitTestDetails = static_cast<HeaderHitTestConstants>(hitTestFlags);
 		}
 		ClassFactory::InitColumn(column, this, IID_IListViewColumn, reinterpret_cast<LPUNKNOWN*>(ppHitColumn));
 		return S_OK;
@@ -12606,22 +12605,22 @@ STDMETHODIMP ExplorerListView::HitTest(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y, Hit
 	}
 
 	if(IsWindow()) {
-		UINT flags = HitTestConstants2LVHTFlags(*pHitTestDetails);
+		UINT hitTestFlags = HitTestConstants2LVHTFlags(*pHitTestDetails);
 		LVITEMINDEX itemIndex = {-1, 0};
 		if(pHitSubItem && pHitSubItem->vt != VT_ERROR) {
 			int subItemIndex = -1;
-			HitTest(x, y, &flags, &itemIndex, &subItemIndex, TRUE);
+			HitTest(x, y, &hitTestFlags, &itemIndex, &subItemIndex, TRUE);
 			VariantClear(pHitSubItem);
 			ClassFactory::InitListSubItem(itemIndex, subItemIndex, this, IID_IDispatch, reinterpret_cast<LPUNKNOWN*>(pHitSubItem->ppdispVal));
 			pHitSubItem->vt = VT_DISPATCH | VT_BYREF;
 		} else {
-			HitTest(x, y, &flags, &itemIndex, NULL, TRUE);
+			HitTest(x, y, &hitTestFlags, &itemIndex, NULL, TRUE);
 		}
 
 		if(IsComctl32Version610OrNewer()) {
 			if(pHitGroup && pHitGroup->vt != VT_ERROR) {
 				VariantClear(pHitGroup);
-				if(flags & LVHT_EX_GROUP) {
+				if(hitTestFlags & LVHT_EX_GROUP) {
 					itemIndex.iItem = -1;
 					itemIndex.iGroup = 0;
 					HitTest(x, y, NULL, &itemIndex, NULL, TRUE, TRUE, FALSE);
@@ -12631,7 +12630,7 @@ STDMETHODIMP ExplorerListView::HitTest(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y, Hit
 			}
 			if(pHitFooterItem && pHitFooterItem->vt != VT_ERROR) {
 				VariantClear(pHitFooterItem);
-				if(flags & LVHT_EX_FOOTER) {
+				if(hitTestFlags & LVHT_EX_FOOTER) {
 					itemIndex.iItem = -1;
 					itemIndex.iGroup = 0;
 					HitTest(x, y, NULL, &itemIndex, NULL, TRUE, TRUE, FALSE);
@@ -12642,7 +12641,7 @@ STDMETHODIMP ExplorerListView::HitTest(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y, Hit
 		}
 
 		if(pHitTestDetails) {
-			*pHitTestDetails = LVHTFlags2HitTestConstants(flags, itemIndex.iItem != -1);
+			*pHitTestDetails = LVHTFlags2HitTestConstants(hitTestFlags, itemIndex.iItem != -1);
 		}
 		ClassFactory::InitListItem(itemIndex, this, IID_IListViewItem, reinterpret_cast<LPUNKNOWN*>(ppHitItem));
 		return S_OK;
@@ -14164,7 +14163,7 @@ LRESULT ExplorerListView::OnReflectedDrawItem(UINT /*message*/, WPARAM /*wParam*
 	ATLASSERT((pDetails->itemState & (ODS_GRAYED | ODS_DISABLED | ODS_CHECKED | ODS_DEFAULT | ODS_COMBOBOXEDIT | ODS_INACTIVE)) == 0);
 
 	if(pDetails->hwndItem == *this) {
-		LVITEMINDEX itemIndex = {pDetails->itemID, 0};
+		LVITEMINDEX itemIndex = {static_cast<int>(pDetails->itemID), 0};
 		CComPtr<IListViewItem> pLvwItem = ClassFactory::InitListItem(itemIndex, this, FALSE);
 		Raise_OwnerDrawItem(pLvwItem, static_cast<OwnerDrawItemStateConstants>(pDetails->itemState), HandleToLong(pDetails->hDC), reinterpret_cast<RECTANGLE*>(&pDetails->rcItem));
 		return TRUE;
@@ -17446,12 +17445,12 @@ LRESULT ExplorerListView::OnHeaderSetItem(UINT message, WPARAM wParam, LPARAM lP
 				hr = pLvwItem->get_ID(&pDetails->pItemIDs[0]);
 				pDetails->numberOfItems = 1;
 			} else {
-				CComQIPtr<IListViewItemContainer> pLvwItems = pDetails->pVariant->pdispVal;
-				if(pLvwItems) {
+				CComQIPtr<IListViewItemContainer> pLvwItemContainer = pDetails->pVariant->pdispVal;
+				if(pLvwItemContainer) {
 					// a ListViewItemContainer collection
-					CComQIPtr<IEnumVARIANT> pEnumerator = pLvwItems;
+					CComQIPtr<IEnumVARIANT> pEnumerator = pLvwItemContainer;
 					LONG c = 0;
-					pLvwItems->Count(&c);
+					pLvwItemContainer->Count(&c);
 					pDetails->numberOfItems = c;
 					if(pDetails->numberOfItems > 0 && pEnumerator) {
 						ATLASSUME(shellBrowserInterface.pInternalMessageListener);
@@ -24479,15 +24478,15 @@ int ExplorerListView::HeaderHitTest(LONG x, LONG y, UINT* pFlags)
 {
 	ATLASSERT(containedSysHeader32.IsWindow());
 
-	UINT flags = 0;
+	UINT hitTestFlags = 0;
 	if(pFlags) {
-		flags = *pFlags;
+		hitTestFlags = *pFlags;
 	}
-	HDHITTESTINFO hitTestInfo = {{x, y}, flags, -1};
+	HDHITTESTINFO hitTestInfo = {{x, y}, hitTestFlags, -1};
 	int column = static_cast<int>(containedSysHeader32.SendMessage(HDM_HITTEST, 0, reinterpret_cast<LPARAM>(&hitTestInfo)));
-	flags = hitTestInfo.flags;
+	hitTestFlags = hitTestInfo.flags;
 	if(pFlags) {
-		*pFlags = flags;
+		*pFlags = hitTestFlags;
 	}
 	return column;
 }
@@ -24506,12 +24505,12 @@ void ExplorerListView::HitTest(LONG x, LONG y, UINT* pFlags, LVITEMINDEX* pHitIt
 		pHitItem = &dummy;
 	}
 
-	UINT flags = 0;
+	UINT hitTestFlags = 0;
 	UINT normalFlags = 0;
 	if(pFlags) {
-		flags = *pFlags;
+		hitTestFlags = *pFlags;
 	}
-	LVHITTESTINFO hitTestInfo = {{x, y}, flags, 0, 0, 0};
+	LVHITTESTINFO hitTestInfo = {{x, y}, hitTestFlags, 0, 0, 0};
 	pHitItem->iItem = -1;
 	pHitItem->iGroup = 0;
 	if(pHitSubItem) {
@@ -24527,7 +24526,7 @@ void ExplorerListView::HitTest(LONG x, LONG y, UINT* pFlags, LVITEMINDEX* pHitIt
 		normalFlags = hitTestInfo.flags;
 
 		if(wantExtendedFlags) {
-			hitTestInfo.flags = flags;
+			hitTestInfo.flags = hitTestFlags;
 			if(wantItemIndex) {
 				SendMessage(LVM_SUBITEMHITTEST, static_cast<WPARAM>(-1), reinterpret_cast<LPARAM>(&hitTestInfo));
 			} else {
@@ -24544,7 +24543,7 @@ void ExplorerListView::HitTest(LONG x, LONG y, UINT* pFlags, LVITEMINDEX* pHitIt
 		normalFlags = hitTestInfo.flags;
 
 		if(wantExtendedFlags) {
-			hitTestInfo.flags = flags;
+			hitTestInfo.flags = hitTestFlags;
 			if(wantItemIndex) {
 				SendMessage(LVM_HITTEST, static_cast<WPARAM>(-1), reinterpret_cast<LPARAM>(&hitTestInfo));
 			} else {
@@ -24574,9 +24573,9 @@ void ExplorerListView::HitTest(LONG x, LONG y, UINT* pFlags, LVITEMINDEX* pHitIt
 			hitTestInfo.flags |= LVHT_BELOW;
 		}
 	}
-	flags = hitTestInfo.flags;
+	hitTestFlags = hitTestInfo.flags;
 	if(pFlags) {
-		*pFlags = flags;
+		*pFlags = hitTestFlags;
 	}
 	if(!ignoreBoundingBoxDefinition && wantItemIndex && ((HitTestConstants2LVHTFlags(static_cast<HitTestConstants>(properties.itemBoundingBoxDefinition)) & normalFlags) != normalFlags)) {
 		pHitItem->iItem = -1;

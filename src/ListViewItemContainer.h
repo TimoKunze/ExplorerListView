@@ -184,14 +184,14 @@ public:
 
 	/// \brief <em>Adds the specified item(s) to the collection</em>
 	///
-	/// \param[in] items The item(s) to add. May be either an item ID (non-virtual mode only), an item index
-	///            (virtual-mode only), a \c ListViewItem object or a \c ListViewItems collection.
+	/// \param[in] itemsToAdd The item(s) to add. May be either an item ID (non-virtual mode only), an item
+	///            index (virtual-mode only), a \c ListViewItem object or a \c ListViewItems collection.
 	///
 	/// \return An \c HRESULT error code.
 	///
 	/// \sa ListViewItem::get_ID, ListViewItem::get_Index, ExplorerListView::get_VirtualMode, Count, Remove,
 	///     RemoveAll
-	virtual HRESULT STDMETHODCALLTYPE Add(VARIANT items);
+	virtual HRESULT STDMETHODCALLTYPE Add(VARIANT itemsToAdd);
 	/// \brief <em>Clones the collection object</em>
 	///
 	/// Retrieves an exact copy of the collection.

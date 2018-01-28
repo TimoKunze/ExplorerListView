@@ -174,7 +174,7 @@ LRESULT CMainDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam
 						if(hMem) {
 							LPVOID pIconData = LockResource(hMem);
 							if(pIconData) {
-								HICON hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
+								hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
 								if(hIcon) {
 									switch(iml) {
 										case 0:
@@ -241,7 +241,7 @@ LRESULT CMainDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam
 						if(hMem) {
 							LPVOID pIconData = LockResource(hMem);
 							if(pIconData) {
-								HICON hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
+								hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
 								if(hIcon) {
 									switch(iml) {
 										case 0:
@@ -1815,7 +1815,7 @@ void __stdcall CMainDlg::DropExlvwu(LPDISPATCH dropTarget, short button, short s
 	_variant_t v;
 	v.Clear();
 	while(pEnum->Next(1, &v, &ul) == S_OK) {
-		CComQIPtr<ExLVwLibU::IListViewItem> pItem = v.pdispVal;
+		pItem = v.pdispVal;
 		OLE_XPOS_PIXELS xPos;
 		OLE_YPOS_PIXELS yPos;
 		pItem->GetPosition(&xPos, &yPos);
@@ -3535,11 +3535,9 @@ void __stdcall CMainDlg::ItemGetDisplayInfoExlvwu(LPDISPATCH listItem, LPDISPATC
 
 	if(requestedInfo & ExLVwLibU::riItemText) {
 		if(pSubItem && pSubItem->GetIndex() != 0) {
-			CAtlString str;
 			str.Format(TEXT("Item %i, SubItem %i"), pItem->GetIndex(), pSubItem->GetIndex());
 			*itemText = _bstr_t(str).Detach();
 		} else {
-			CAtlString str;
 			str.Format(TEXT("Item %i"), pItem->GetIndex());
 			*itemText = _bstr_t(str).Detach();
 		}
@@ -3594,12 +3592,10 @@ void __stdcall CMainDlg::ItemGetInfoTipTextExlvwu(LPDISPATCH listItem, long maxI
 
 	if(controls.exlvwU->GetVirtualMode() == VARIANT_FALSE) {
 		if(wcslen(OLE2W(*infoTipText)) == 0) {
-			CAtlString tmp;
 			tmp.Format(TEXT("ID: %i\r\nItemData: 0x%X"), pItem->GetID(), pItem->GetItemData());
 
 			*infoTipText = _bstr_t(tmp).Detach();
 		} else {
-			CAtlString tmp;
 			tmp.Format(TEXT("%s\r\nID: %i\r\nItemData: 0x%X"), OLE2W(*infoTipText), pItem->GetID(), pItem->GetItemData());
 
 			*infoTipText = _bstr_t(tmp).Detach();
@@ -5493,7 +5489,7 @@ void __stdcall CMainDlg::DropExlvwa(LPDISPATCH dropTarget, short button, short s
 	_variant_t v;
 	v.Clear();
 	while(pEnum->Next(1, &v, &ul) == S_OK) {
-		CComQIPtr<ExLVwLibA::IListViewItem> pItem = v.pdispVal;
+		pItem = v.pdispVal;
 		OLE_XPOS_PIXELS xPos;
 		OLE_YPOS_PIXELS yPos;
 		pItem->GetPosition(&xPos, &yPos);
@@ -7197,11 +7193,9 @@ void __stdcall CMainDlg::ItemGetDisplayInfoExlvwa(LPDISPATCH listItem, LPDISPATC
 
 	if(requestedInfo & ExLVwLibA::riItemText) {
 		if(pSubItem && pSubItem->GetIndex() != 0) {
-			CAtlString str;
 			str.Format(TEXT("Item %i, SubItem %i"), pItem->GetIndex(), pSubItem->GetIndex());
 			*itemText = _bstr_t(str).Detach();
 		} else {
-			CAtlString str;
 			str.Format(TEXT("Item %i"), pItem->GetIndex());
 			*itemText = _bstr_t(str).Detach();
 		}
@@ -7256,12 +7250,10 @@ void __stdcall CMainDlg::ItemGetInfoTipTextExlvwa(LPDISPATCH listItem, long maxI
 
 	if(controls.exlvwA->GetVirtualMode() == VARIANT_FALSE) {
 		if(wcslen(OLE2W(*infoTipText)) == 0) {
-			CAtlString tmp;
 			tmp.Format(TEXT("ID: %i\r\nItemData: 0x%X"), pItem->GetID(), pItem->GetItemData());
 
 			*infoTipText = _bstr_t(tmp).Detach();
 		} else {
-			CAtlString tmp;
 			tmp.Format(TEXT("%s\r\nID: %i\r\nItemData: 0x%X"), OLE2W(*infoTipText), pItem->GetID(), pItem->GetItemData());
 
 			*infoTipText = _bstr_t(tmp).Detach();

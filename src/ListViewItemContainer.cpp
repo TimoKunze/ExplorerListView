@@ -219,8 +219,8 @@ STDMETHODIMP ListViewItemContainer::get_Item(LONG itemIdentifier, IListViewItem*
 			}
 			if(itemIndex != -1) {
 				// TODO: It would be better to make this method work with LVITEMINDEX
-				LVITEMINDEX i = {itemIndex, 0};
-				ClassFactory::InitListItem(i, properties.pOwnerExLvw, IID_IListViewItem, reinterpret_cast<LPUNKNOWN*>(ppItem));
+				LVITEMINDEX itmIndex = {itemIndex, 0};
+				ClassFactory::InitListItem(itmIndex, properties.pOwnerExLvw, IID_IListViewItem, reinterpret_cast<LPUNKNOWN*>(ppItem));
 				return S_OK;
 			}
 		}
@@ -236,8 +236,8 @@ STDMETHODIMP ListViewItemContainer::get_Item(LONG itemIdentifier, IListViewItem*
 				}
 				if(itemIndex != -1) {
 					// TODO: It would be better to make this method work with LVITEMINDEX
-					LVITEMINDEX i = {itemIndex, 0};
-					ClassFactory::InitListItem(i, properties.pOwnerExLvw, IID_IListViewItem, reinterpret_cast<LPUNKNOWN*>(ppItem));
+					LVITEMINDEX itmIndex = {itemIndex, 0};
+					ClassFactory::InitListItem(itmIndex, properties.pOwnerExLvw, IID_IListViewItem, reinterpret_cast<LPUNKNOWN*>(ppItem));
 					return S_OK;
 				}
 				break;
@@ -260,14 +260,14 @@ STDMETHODIMP ListViewItemContainer::get__NewEnum(IUnknown** ppEnumerator)
 }
 
 
-STDMETHODIMP ListViewItemContainer::Add(VARIANT items)
+STDMETHODIMP ListViewItemContainer::Add(VARIANT itemsToAdd)
 {
 	HRESULT hr = E_FAIL;
 	LONG id = -1;
-	switch(items.vt) {
+	switch(itemsToAdd.vt) {
 		case VT_DISPATCH:
-			if(items.pdispVal) {
-				CComQIPtr<IListViewItem, &IID_IListViewItem> pLvwItem(items.pdispVal);
+			if(itemsToAdd.pdispVal) {
+				CComQIPtr<IListViewItem, &IID_IListViewItem> pLvwItem(itemsToAdd.pdispVal);
 				if(pLvwItem) {
 					// add a single ListViewItem object
 					if(properties.useIndexes) {
@@ -277,7 +277,7 @@ STDMETHODIMP ListViewItemContainer::Add(VARIANT items)
 						hr = pLvwItem->get_ID(&id);
 					}
 				} else {
-					CComQIPtr<IListViewItems, &IID_IListViewItems> pLvwItems(items.pdispVal);
+					CComQIPtr<IListViewItems, &IID_IListViewItems> pLvwItems(itemsToAdd.pdispVal);
 					if(pLvwItems) {
 						// add a ListViewItems collection
 						CComQIPtr<IEnumVARIANT, &IID_IEnumVARIANT> pEnumerator(pLvwItems);
@@ -330,7 +330,7 @@ STDMETHODIMP ListViewItemContainer::Add(VARIANT items)
 		default:
 			VARIANT v;
 			VariantInit(&v);
-			hr = VariantChangeType(&v, &items, 0, VT_UI4);
+			hr = VariantChangeType(&v, &itemsToAdd, 0, VT_UI4);
 			id = v.ulVal;
 			break;
 	}
@@ -489,8 +489,8 @@ STDMETHODIMP ListViewItemContainer::CreateDragImage(OLE_XPOS_PIXELS* pXUpperLeft
 					POINT pt = {0};
 					RECT itemBoundingRect = {0};
 					// TODO: really work with LVITEMINDEX
-					LVITEMINDEX i = {itemIndex, 0};
-					HIMAGELIST hImageList = properties.pOwnerExLvw->CreateLegacyDragImage(i, &pt, &itemBoundingRect);
+					LVITEMINDEX itmIndex = {itemIndex, 0};
+					HIMAGELIST hImageList = properties.pOwnerExLvw->CreateLegacyDragImage(itmIndex, &pt, &itemBoundingRect);
 					boundingRect.UnionRect(&boundingRect, &itemBoundingRect);
 
 					#ifdef USE_STL
