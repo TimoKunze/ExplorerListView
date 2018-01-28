@@ -324,7 +324,7 @@ LRESULT CMainDlg::OnWindowPosChanged(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM lP
 		LPWINDOWPOS pDetails = reinterpret_cast<LPWINDOWPOS>(lParam);
 
 		if((pDetails->flags & SWP_NOSIZE) == 0) {
-			WTL::CRect rc;
+			CRect rc;
 			GetClientRect(&rc);
 			int cx = static_cast<int>(0.5 * static_cast<double>(rc.Width()));
 			controls.descrStatic.SetWindowPos(NULL, 3, rc.Height() - 26, 0, 0, SWP_NOSIZE);
