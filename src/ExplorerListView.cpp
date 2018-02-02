@@ -17452,34 +17452,8 @@ LRESULT ExplorerListView::OnHeaderSetItem(UINT message, WPARAM wParam, LPARAM lP
 					LONG c = 0;
 					pLvwItemContainer->Count(&c);
 					pDetails->numberOfItems = c;
-					if(pDetails->numberOfItems > 0 && pEnumerator) {
-						ATLASSUME(shellBrowserInterface.pInternalMessageListener);
-						pDetails->pItemIDs = reinterpret_cast<PLONG>(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHLVM_ALLOCATEMEMORY, pDetails->numberOfItems * sizeof(LONG), NULL));
-						ATLASSERT_ARRAYPOINTER(pDetails->pItemIDs, LONG, pDetails->numberOfItems);
-						VARIANT item;
-						VariantInit(&item);
-						ULONG dummy = 0;
-						for(UINT i = 0; i < pDetails->numberOfItems && pEnumerator->Next(1, &item, &dummy) == S_OK; ++i) {
-							pDetails->pItemIDs[i] = -1;
-							if((item.vt == VT_DISPATCH) && item.pdispVal) {
-								pLvwItem = item.pdispVal;
-								if(pLvwItem) {
-									pLvwItem->get_ID(&pDetails->pItemIDs[i]);
-								}
-							}
-							VariantClear(&item);
-						}
-						hr = S_OK;
-					}
-				} else {
-					CComQIPtr<IListViewItems> pLvwItems = pDetails->pVariant->pdispVal;
-					if(pLvwItems) {
-						// a ListViewItems collection
-						CComQIPtr<IEnumVARIANT> pEnumerator = pLvwItems;
-						LONG c = 0;
-						pLvwItems->Count(&c);
-						pDetails->numberOfItems = c;
-						if(pDetails->numberOfItems > 0 && pEnumerator) {
+					if(pEnumerator) {
+						if(pDetails->numberOfItems > 0) {
 							ATLASSUME(shellBrowserInterface.pInternalMessageListener);
 							pDetails->pItemIDs = reinterpret_cast<PLONG>(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHLVM_ALLOCATEMEMORY, pDetails->numberOfItems * sizeof(LONG), NULL));
 							ATLASSERT_ARRAYPOINTER(pDetails->pItemIDs, LONG, pDetails->numberOfItems);
@@ -17495,6 +17469,36 @@ LRESULT ExplorerListView::OnHeaderSetItem(UINT message, WPARAM wParam, LPARAM lP
 									}
 								}
 								VariantClear(&item);
+							}
+						}
+						hr = S_OK;
+					}
+				} else {
+					CComQIPtr<IListViewItems> pLvwItems = pDetails->pVariant->pdispVal;
+					if(pLvwItems) {
+						// a ListViewItems collection
+						CComQIPtr<IEnumVARIANT> pEnumerator = pLvwItems;
+						LONG c = 0;
+						pLvwItems->Count(&c);
+						pDetails->numberOfItems = c;
+						if(pEnumerator) {
+							if(pDetails->numberOfItems > 0) {
+								ATLASSUME(shellBrowserInterface.pInternalMessageListener);
+								pDetails->pItemIDs = reinterpret_cast<PLONG>(shellBrowserInterface.pInternalMessageListener->ProcessMessage(SHLVM_ALLOCATEMEMORY, pDetails->numberOfItems * sizeof(LONG), NULL));
+								ATLASSERT_ARRAYPOINTER(pDetails->pItemIDs, LONG, pDetails->numberOfItems);
+								VARIANT item;
+								VariantInit(&item);
+								ULONG dummy = 0;
+								for(UINT i = 0; i < pDetails->numberOfItems && pEnumerator->Next(1, &item, &dummy) == S_OK; ++i) {
+									pDetails->pItemIDs[i] = -1;
+									if((item.vt == VT_DISPATCH) && item.pdispVal) {
+										pLvwItem = item.pdispVal;
+										if(pLvwItem) {
+											pLvwItem->get_ID(&pDetails->pItemIDs[i]);
+										}
+									}
+									VariantClear(&item);
+								}
 							}
 							hr = S_OK;
 						}
