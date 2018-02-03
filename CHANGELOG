@@ -1,3 +1,9 @@
+Version 1.7.6 - 04/02/2018
+
+- Fixed a crash when calling the ShellListView's InvokeDefaultShellContextMenuCommand with an empty ListViewItems or ListViewItemContainer collection.
+
+
+
 Version 1.7.5 - 28/01/2018
 
 - Upgraded to WTL 10.
