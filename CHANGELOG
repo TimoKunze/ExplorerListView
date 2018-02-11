@@ -1,3 +1,9 @@
+Version 1.7.7 - 11/02/2018
+
+- FIX: Setting IListViewColumn::Width to a constant from the AutoSizeConstants enumeration always did apply to the first column (index 0).
+
+
+
 Version 1.7.6 - 04/02/2018
 
 - Fixed a crash when calling the ShellListView's InvokeDefaultShellContextMenuCommand with an empty ListViewItems or ListViewItemContainer collection.

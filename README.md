@@ -1,6 +1,6 @@
 <p align=center>
-  <a href="https://github.com/TimoKunze/ExplorerListView/releases/tag/1.7.6">
-    <img alt="Release 1.7.6 Release" src="https://img.shields.io/badge/release-1.7.6-0688CB.svg">
+  <a href="https://github.com/TimoKunze/ExplorerListView/releases/tag/1.7.7">
+    <img alt="Release 1.7.7 Release" src="https://img.shields.io/badge/release-1.7.7-0688CB.svg">
   </a>
   <a href="https://github.com/TimoKunze/ExplorerListView/releases">
     <img alt="Download ExplorerListView" src="https://img.shields.io/badge/download-latest-0688CB.svg">

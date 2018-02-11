@@ -1353,7 +1353,7 @@ STDMETHODIMP ListViewColumn::put_Width(OLE_XSIZE_PIXELS newValue)
 	ATLASSERT(IsWindow(hWndLvw));
 
 	if(newValue < 0) {
-		if(SendMessage(hWndLvw, LVM_SETCOLUMNWIDTH, 0, MAKELPARAM(newValue, 0))) {
+		if(SendMessage(hWndLvw, LVM_SETCOLUMNWIDTH, properties.columnIndex, MAKELPARAM(newValue, 0))) {
 			return S_OK;
 		}
 	} else {
