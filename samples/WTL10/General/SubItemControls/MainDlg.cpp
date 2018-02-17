@@ -435,7 +435,7 @@ void CMainDlg::InsertItems(void)
 	pSubItems->GetItem(2, citIndex)->PutText(OLESTR("Normal Sub-Item"));
 
 	pSubItems = pItems->Add(OLESTR("Hyperlink"), -1, 9, 0, sicHyperlink, -2, tileViewColumns21)->GetSubItems();
-	pSubItems->GetItem(1, citIndex)->PutText(OLESTR("<a id=\"Open http://www.timosoft-software.de\">http://www.timosoft-software.de</a>"));
+	pSubItems->GetItem(1, citIndex)->PutText(OLESTR("<a id=\"Open https://www.timosoft-software.de\">https://www.timosoft-software.de</a>"));
 	pSubItems->GetItem(2, citIndex)->PutText(OLESTR("Normal Sub-Item"));
 }
 

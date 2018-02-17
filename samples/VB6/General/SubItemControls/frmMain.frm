@@ -556,7 +556,7 @@ Private Sub InsertItems()
     iIcon = (iIcon + 1) Mod cImages
 
     Set itm = .Add("Hyperlink", , iIcon, , sicHyperlink, , Array(si2b, si1b))
-    itm.SubItems(1).Text = "<a id=""Open http://www.timosoft-software.de"">http://www.timosoft-software.de</a>"
+    itm.SubItems(1).Text = "<a id=""Open https://www.timosoft-software.de"">https://www.timosoft-software.de</a>"
     itm.SubItems(1).IconIndex = (iIcon + 1) Mod cImages
     itm.SubItems(2).Text = "Normal Sub-Item"
     itm.SubItems(2).IconIndex = (iIcon + 2) Mod cImages
