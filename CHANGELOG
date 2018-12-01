@@ -1,3 +1,9 @@
+Version 1.7.8 - 01/12/2018
+
+- FIX: Existing list view groups did work only partially after a call to ListItems.RemoveAll.
+
+
+
 Version 1.7.7 - 11/02/2018
 
 - FIX: Setting IListViewColumn::Width to a constant from the AutoSizeConstants enumeration always did apply to the first column (index 0).
