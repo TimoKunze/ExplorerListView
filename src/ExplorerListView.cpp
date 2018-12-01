@@ -14504,11 +14504,9 @@ LRESULT ExplorerListView::OnDeleteAllItems(UINT message, WPARAM wParam, LPARAM l
 		#ifdef USE_STL
 			itemIDs.clear();
 			itemParams.clear();
-			groups.clear();
 		#else
 			itemIDs.RemoveAll();
 			itemParams.RemoveAll();
-			groups.RemoveAll();
 		#endif
 	}
 
