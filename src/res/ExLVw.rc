@@ -76,7 +76,7 @@ BEGIN
 #else
             VALUE "InternalName", "ExLVwA.ocx"
 #endif
-            VALUE "LegalCopyright", "Copyright (C) 2005-2018 Timo ""TimoSoft"" Kunze"
+            VALUE "LegalCopyright", "Copyright (C) 2005-2019 Timo ""TimoSoft"" Kunze"
 #ifdef UNICODE
             VALUE "OriginalFilename", "ExLVwU.ocx"
 #else
